@@ -72,6 +72,21 @@ app.get("/api/health", (req, res) => {
     });
 });
 
+app.get("/api/debug-paths", (req, res) => {
+    try {
+        res.json({
+            __dirname,
+            cwd: process.cwd(),
+            frontendPath,
+            filesInDirname: fs.existsSync(__dirname) ? fs.readdirSync(__dirname) : [],
+            filesInFrontend: fs.existsSync(frontendPath) ? fs.readdirSync(frontendPath) : [],
+            filesInCwd: fs.existsSync(process.cwd()) ? fs.readdirSync(process.cwd()) : []
+        });
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
+});
+
 /* =========================================================
    AUTH & OTP ROUTES
 ========================================================= */
