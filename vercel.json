@@ -1,14 +1,72 @@
 {
   "version": 2,
-  "cleanUrls": true,
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/index.js"
+      "src": "/api/(.*)",
+      "dest": "/api/index.js"
     },
     {
-      "source": "/",
-      "destination": "/index.html"
+      "handle": "filesystem"
+    },
+    {
+      "src": "/home",
+      "dest": "/home.html"
+    },
+    {
+      "src": "/login",
+      "dest": "/login.html"
+    },
+    {
+      "src": "/customer-login",
+      "dest": "/customer-login.html"
+    },
+    {
+      "src": "/seller-login",
+      "dest": "/seller-login.html"
+    },
+    {
+      "src": "/signup",
+      "dest": "/signup.html"
+    },
+    {
+      "src": "/customer-signup",
+      "dest": "/customer-signup.html"
+    },
+    {
+      "src": "/seller-signup",
+      "dest": "/seller-signup.html"
+    },
+    {
+      "src": "/account",
+      "dest": "/account.html"
+    },
+    {
+      "src": "/services",
+      "dest": "/services.html"
+    },
+    {
+      "src": "/jobs",
+      "dest": "/jobs.html"
+    },
+    {
+      "src": "/sell",
+      "dest": "/sell.html"
+    },
+    {
+      "src": "/product",
+      "dest": "/product.html"
+    },
+    {
+      "src": "/messages",
+      "dest": "/messages.html"
+    },
+    {
+      "src": "/notifications",
+      "dest": "/notifications.html"
+    },
+    {
+      "src": "/",
+      "dest": "/index.html"
     }
   ]
 }

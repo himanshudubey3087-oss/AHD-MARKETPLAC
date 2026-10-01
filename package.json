@@ -2,7 +2,6 @@
   "name": "ahd-marketplace",
   "version": "1.0.0",
   "description": "AHD Marketplace - Hyperlocal Buy, Sell & Deals Platform",
-  "main": "api/index.js",
   "scripts": {
     "start": "node AHD-BACKEND/server.js"
   },

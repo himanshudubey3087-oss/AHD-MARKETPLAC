@@ -40,7 +40,9 @@ app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
 // Serve frontend static files
 const frontendPath = path.join(__dirname, "..");
-app.use(express.static(frontendPath));
+if (!process.env.VERCEL) {
+    app.use(express.static(frontendPath));
+}
 
 /* =========================================================
    HEALTH CHECK
@@ -593,6 +595,9 @@ app.get(["/setting.js", "/settings.js", "/js/setting.js", "/js/settings.js"], (r
    FALLBACK ROUTE & ERROR HANDLING
 ========================================================= */
 app.use((req, res) => {
+    if (process.env.VERCEL) {
+        return res.status(404).json({ error: "API endpoint not found", path: req.originalUrl });
+    }
     const indexPath = path.join(frontendPath, "index.html");
     res.sendFile(indexPath, (err) => {
         if (err && !res.headersSent) {
