@@ -29,7 +29,7 @@ copyDir(path.join(root, "js"), path.join(publicDir, "js"));
 // 2. Copy all root assets and html files
 const files = fs.readdirSync(root);
 const assetExts = [".html", ".css", ".js", ".png", ".jpg", ".jpeg", ".svg", ".ico", ".json", ".webp"];
-const ignoredFiles = new Set(["package.json", "package-lock.json", "vercel.json", "build.js", "README.md"]);
+const ignoredFiles = new Set(["package.json", "package-lock.json", "vercel.json", "build.js", "README.md", "server.js", "index.js"]);
 
 for (const file of files) {
     const ext = path.extname(file).toLowerCase();
