@@ -41,7 +41,9 @@ app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
 // Serve frontend static files
 const frontendPath = path.join(__dirname, "..");
-app.use(express.static(frontendPath));
+app.use(express.static(frontendPath, {
+    extensions: ["html", "htm"]
+}));
 
 // Route root to index.html
 app.get("/", (req, res) => {
