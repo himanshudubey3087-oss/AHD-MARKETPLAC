@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AHD Marketplace - Category</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/category.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="ahd-header">
+
+    <div class="logo" onclick="goHome()">
+        AHD
+    </div>
+
+    <div
+        class="location-box"
+        onclick="requestLocation()"
+    >
+        📍
+        <span id="userLocation">
+            Select Location
+        </span>
+    </div>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="globalSearch"
+            placeholder="Search products, services..."
+            onkeydown="handleSearch(event)"
+        >
+
+        <button onclick="performSearch()">
+            🔍
+        </button>
+
+    </div>
+
+    <button
+        class="sell-btn"
+        onclick="goToSell()"
+    >
+        + Sell
+    </button>
+
+    <div
+        class="account-btn"
+        onclick="openAccount()"
+    >
+        👤 Account
+    </div>
+
+</header>
+
+
+<!-- ================= CATEGORY NAV ================= -->
+
+<nav class="category-nav">
+
+    <a href="home.html">
+        Home
+    </a>
+
+    <a
+        href="category.html?category=Mobiles"
+        data-category="Mobiles"
+    >
+        Mobiles
+    </a>
+
+    <a
+        href="category.html?category=Electronics"
+        data-category="Electronics"
+    >
+        Electronics
+    </a>
+
+    <a
+        href="category.html?category=Vehicles"
+        data-category="Vehicles"
+    >
+        Vehicles
+    </a>
+
+    <a
+        href="category.html?category=Furniture"
+        data-category="Furniture"
+    >
+        Furniture
+    </a>
+
+    <a
+        href="category.html?category=Fashion"
+        data-category="Fashion"
+    >
+        Fashion
+    </a>
+
+    <a
+        href="category.html?category=Jobs"
+        data-category="Jobs"
+    >
+        Jobs
+    </a>
+
+    <a href="services.html">
+        Services
+    </a>
+
+</nav>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="category-page">
+
+    <!-- Breadcrumb -->
+
+    <div class="breadcrumb">
+
+        <a href="home.html">
+            Home
+        </a>
+
+        <span>
+            ›
+        </span>
+
+        <strong id="breadcrumbCategory">
+            Category
+        </strong>
+
+    </div>
+
+
+    <!-- CATEGORY HERO -->
+
+    <section class="category-hero">
+
+        <div>
+
+            <p class="small-title">
+                AHD MARKETPLACE
+            </p>
+
+            <h1 id="categoryTitle">
+                Products
+            </h1>
+
+            <p id="categoryDescription">
+                Explore products available in this category.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TOOLBAR ================= -->
+
+    <section class="category-toolbar">
+
+        <div class="result-count">
+
+            <strong id="resultCount">
+                0
+            </strong>
+
+            products found
+
+        </div>
+
+
+        <div class="toolbar-actions">
+
+            <label for="sortProducts">
+                Sort:
+            </label>
+
+            <select
+                id="sortProducts"
+                onchange="sortProducts()"
+            >
+
+                <option value="latest">
+                    Latest
+                </option>
+
+                <option value="low">
+                    Price: Low to High
+                </option>
+
+                <option value="high">
+                    Price: High to Low
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PRODUCT AREA ================= -->
+
+    <section class="category-content">
+
+
+        <!-- FILTER SIDEBAR -->
+
+        <aside class="category-filter">
+
+            <h3>
+                Filters
+            </h3>
+
+
+            <div class="filter-group">
+
+                <h4>
+                    Condition
+                </h4>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        value="New"
+                        class="condition-filter"
+                        onchange="applyFilters()"
+                    >
+
+                    New
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        value="Like New"
+                        class="condition-filter"
+                        onchange="applyFilters()"
+                    >
+
+                    Like New
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        value="Good"
+                        class="condition-filter"
+                        onchange="applyFilters()"
+                    >
+
+                    Good
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        value="Used"
+                        class="condition-filter"
+                        onchange="applyFilters()"
+                    >
+
+                    Used
+                </label>
+
+            </div>
+
+
+            <div class="filter-group">
+
+                <h4>
+                    Price
+                </h4>
+
+                <input
+                    type="number"
+                    id="minPrice"
+                    placeholder="Min ₹"
+                    onchange="applyFilters()"
+                >
+
+                <input
+                    type="number"
+                    id="maxPrice"
+                    placeholder="Max ₹"
+                    onchange="applyFilters()"
+                >
+
+            </div>
+
+
+            <button
+                class="clear-filter"
+                onclick="clearFilters()"
+            >
+                Clear Filters
+            </button>
+
+        </aside>
+
+
+        <!-- PRODUCTS -->
+
+        <div class="category-products">
+
+            <div
+                class="product-grid"
+                id="productGrid"
+            >
+                <!-- Products generated by JS -->
+            </div>
+
+
+            <!-- NO PRODUCTS -->
+
+            <div
+                class="no-products"
+                id="noProducts"
+            >
+
+                <div class="empty-icon">
+                    🔍
+                </div>
+
+                <h2>
+                    No products found
+                </h2>
+
+                <p>
+                    Try changing your filters or explore another category.
+                </p>
+
+                <button onclick="goHome()">
+                    Browse All Products
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="ahd-footer">
+
+    <div class="footer-logo">
+
+        <h2>
+            AHD
+        </h2>
+
+        <p>
+            Buy Anything. Sell Anything.
+        </p>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="home.html">
+            Home
+        </a>
+
+        <a href="sell.html">
+            Sell
+        </a>
+
+        <a href="services.html">
+            Services
+        </a>
+
+        <a href="jobs.html">
+            Jobs
+        </a>
+
+        <a href="settings.html">
+            Settings
+        </a>
+
+    </div>
+
+
+    <p class="copyright">
+        © 2026 AHD Marketplace. All rights reserved.
+    </p>
+
+</footer>
+
+
+<!-- ================= JS ================= -->
+
+<script src="js/script.js"></script>
+
+<script src="js/location.js"></script>
+
+<script src="js/category.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AHD - Matches</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/matches.css">
+</head>
+
+<body>
+
+<header class="matches-header">
+
+    <div class="logo" onclick="goHome()">AHD</div>
+
+    <nav class="main-nav">
+        <a href="home.html">Home</a>
+        <a href="category.html">Categories</a>
+        <a href="search.html">Search</a>
+        <a href="request.html">Request</a>
+        <a href="matches.html" class="active">Matches</a>
+        <a href="messages.html">Messages</a>
+        <a href="account.html" class="account-link">Account</a>
+    </nav>
+
+</header>
+
+
+<main class="matches-container">
+
+    <!-- PAGE TITLE -->
+
+    <section class="page-heading">
+
+        <div>
+            <span class="heading-badge">AHD MATCHING</span>
+
+            <h1>Find Your Best Match</h1>
+
+            <p>
+                AHD आपकी requirement के अनुसार available products को
+                match करके सबसे suitable options दिखाता है।
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- REQUEST SUMMARY -->
+
+    <section class="request-card">
+
+        <div class="section-title">
+            <div>
+                <span class="small-title">YOUR REQUIREMENT</span>
+                <h2>Customer Requirement</h2>
+            </div>
+
+            <span id="requestStatus" class="status pending">
+                Pending
+            </span>
+        </div>
+
+
+        <div class="requirement-grid">
+
+            <div class="requirement-item">
+                <span>What you need</span>
+                <strong id="needProduct">Loading...</strong>
+            </div>
+
+            <div class="requirement-item">
+                <span>Category</span>
+                <strong id="needCategory">-</strong>
+            </div>
+
+            <div class="requirement-item">
+                <span>Maximum Budget</span>
+                <strong id="needBudget">-</strong>
+            </div>
+
+            <div class="requirement-item">
+                <span>Condition</span>
+                <strong id="needCondition">Any</strong>
+            </div>
+
+            <div class="requirement-item">
+                <span>Quantity</span>
+                <strong id="needQuantity">-</strong>
+            </div>
+
+            <div class="requirement-item">
+                <span>Preferred Brand</span>
+                <strong id="needBrand">Any Brand</strong>
+            </div>
+
+            <div class="requirement-item full-width">
+                <span>Requirement Details</span>
+                <strong id="needDetails">
+                    No additional details provided.
+                </strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MATCH CONTROLS -->
+
+    <section class="match-controls">
+
+        <div>
+            <h2>Matching Products</h2>
+            <p id="matchDescription">
+                Finding products according to your requirement...
+            </p>
+        </div>
+
+        <div class="sort-box">
+
+            <label for="matchSort">Sort by</label>
+
+            <select id="matchSort">
+
+                <option value="match">Best Match</option>
+                <option value="priceLow">Price: Low to High</option>
+                <option value="priceHigh">Price: High to Low</option>
+                <option value="distance">Nearest First</option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+    <!-- MATCH RESULT -->
+
+    <section id="matchesGrid" class="matches-grid">
+
+        <!-- Products will be inserted by JavaScript -->
+
+    </section>
+
+
+    <!-- NO MATCH -->
+
+    <section id="noMatch" class="no-match hidden">
+
+        <div class="no-match-icon">🔎</div>
+
+        <h2>No Exact Match Found</h2>
+
+        <p>
+            अभी आपकी requirement के अनुसार कोई suitable product नहीं मिला।
+            आप अपनी requirement को थोड़ा बदलकर फिर से कोशिश कर सकते हैं।
+        </p>
+
+        <div class="no-match-actions">
+
+            <button onclick="editRequest()" class="primary-btn">
+                Edit Requirement
+            </button>
+
+            <button onclick="goHome()" class="secondary-btn">
+                Browse Products
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/matches.js"></script>
+
+</body>
+</html>

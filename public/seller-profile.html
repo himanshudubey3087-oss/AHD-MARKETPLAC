@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AHD - Service Provider Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/seller-profile.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="profile-header">
+        <button id="backBtn" class="back-btn" title="Back">
+            ←
+        </button>
+
+        <div>
+            <h1 id="pageHeading">Service Profile</h1>
+            <p id="pageSubheading">Verified Professional Profile</p>
+        </div>
+
+        <div id="ownerControlsTop" style="display: none;">
+            <a href="edit-profile.html">
+                <button id="editProfileBtn" class="edit-btn">
+                    ✏️ Edit Profile
+                </button>
+            </a>
+        </div>
+    </header>
+
+    <main class="profile-container">
+
+        <!-- PROFILE HERO -->
+        <section class="seller-hero">
+            <div class="photo-box">
+                <img
+                    id="sellerPhoto"
+                    src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=400&q=80"
+                    alt="Service Provider">
+                <span id="availabilityDot" class="availability-dot"></span>
+            </div>
+
+            <div class="seller-main-info">
+                <h2 id="sellerName">Service Provider</h2>
+                <p id="sellerCategory">Professional Service</p>
+
+                <div class="rating">
+                    <span>⭐</span>
+                    <strong id="sellerRating">4.8</strong>
+                    <span id="reviewCount">(0 reviews)</span>
+                </div>
+
+                <p class="location">
+                    📍 <span id="sellerLocation">Agra, Uttar Pradesh</span>
+                </p>
+            </div>
+
+            <!-- PUBLIC VISITOR CONTACT ACTIONS (Shown to other users) -->
+            <div id="publicActionButtons" style="margin-top: 18px; display: flex; gap: 12px; width: 100%; flex-wrap: wrap;">
+                <button type="button" class="primary-btn" onclick="contactSellerAction('call')" style="flex:1; min-width: 140px;">
+                    📞 Call Provider
+                </button>
+                <button type="button" class="secondary-btn" onclick="contactSellerAction('message')" style="flex:1; min-width: 140px;">
+                    💬 Send Message
+                </button>
+                <button type="button" class="primary-btn" onclick="contactSellerAction('book')" style="background:var(--seller-gradient); flex:1; min-width: 140px;">
+                    🤝 Book Service
+                </button>
+            </div>
+        </section>
+
+        <!-- STATUS -->
+        <section class="status-card">
+            <div>
+                <strong>Service Status</strong>
+                <p id="statusText">Available for work</p>
+            </div>
+
+            <!-- Owner Toggle -->
+            <div id="ownerAvailabilityWrapper" style="display: none;">
+                <label class="switch">
+                    <input type="checkbox" id="availabilityToggle" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <!-- Public Status Badge (for visitors) -->
+            <span id="publicStatusBadge" class="verified-badge" style="display: inline-flex; font-size: 13.5px; padding: 6px 14px;">
+                ● Available for Bookings
+            </span>
+        </section>
+
+        <!-- BASIC INFORMATION -->
+        <section class="profile-card">
+            <h3>Professional Information</h3>
+
+            <div class="info-grid">
+                <div class="info-box">
+                    <span>💼 Experience</span>
+                    <strong id="experience">5+ Years</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>💰 Starting Price</span>
+                    <strong id="startingPrice">₹499</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>📦 Services</span>
+                    <strong id="serviceCount">1 Service</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>📅 On AHD Since</span>
+                    <strong id="memberSince">2026</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="profile-card">
+            <h3>About Provider</h3>
+            <p id="aboutText">
+                Experienced and verified professional providing high quality local services on AHD Marketplace.
+            </p>
+        </section>
+
+        <!-- SERVICES LIST -->
+        <section class="profile-card">
+            <div class="services-header">
+                <h3>Services Offered</h3>
+                <span id="ownerAddServiceWrapper" style="display: none;">
+                    <button id="addServiceBtn">
+                        + Add Service
+                    </button>
+                </span>
+            </div>
+
+            <div id="servicesList" class="services-list">
+                <div class="empty-service">
+                    <div>🛠️</div>
+                    <strong>No services added</strong>
+                    <p>Add your first service to start receiving customers.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORKING HOURS -->
+        <section class="profile-card">
+            <h3>Availability & Hours</h3>
+            <div class="working-hours">
+                <div>
+                    <span>Monday - Saturday</span>
+                    <strong id="workingHours">09:00 AM - 08:00 PM</strong>
+                </div>
+                <div>
+                    <span>Sunday</span>
+                    <strong>Open by Appointment</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- OWNER ACTIONS -->
+        <section class="profile-actions" id="ownerBottomActions" style="display: none;">
+            <button id="shareProfileBtn" class="secondary-btn">
+                🔗 Share Profile
+            </button>
+            <button id="previewProfileBtn" class="primary-btn">
+                👁️ Preview Public View
+            </button>
+        </section>
+
+    </main>
+
+    <!-- ADD SERVICE MODAL -->
+    <div id="serviceModal" class="modal" style="display:none;">
+        <div class="modal-box">
+            <button id="closeModal" class="close-modal">×</button>
+            <h2>Add Service</h2>
+            <p class="modal-subtitle">Add a service that you provide.</p>
+
+            <label>Service Name</label>
+            <input type="text" id="serviceNameInput" placeholder="e.g. Bridal Makeup">
+
+            <label>Starting Price (₹)</label>
+            <input type="number" id="servicePriceInput" placeholder="e.g. 1999">
+
+            <label>Description</label>
+            <textarea id="serviceDescriptionInput" placeholder="Describe your service..."></textarea>
+
+            <button id="saveServiceBtn" class="primary-btn full">
+                Add Service
+            </button>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/seller-profile.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,642 @@
+* {
+
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f6f8;
+    color: #222;
+}
+
+
+/* HEADER */
+
+.profile-header {
+    height: 75px;
+    background: rgb(110, 39, 39);
+    border-bottom: 1px solid #f90a0a;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 0 25px;
+
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.profile-header h1 {
+    font-size: 23px;
+}
+
+.profile-header p {
+    color: #888;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.back-btn {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f1f2f4;
+
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    margin-left: auto;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #111;
+    color: white;
+
+    padding: 10px 20px;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* CONTAINER */
+
+.profile-container {
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 0 18px 50px;
+}
+
+
+/* HERO */
+
+.seller-hero {
+    background: white;
+    border-radius: 20px;
+
+    padding: 30px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    box-shadow: 0 4px 20px rgba(0,0,0,.05);
+
+    margin-bottom: 18px;
+}
+
+.photo-box {
+    width: 130px;
+    height: 130px;
+
+    position: relative;
+
+    flex-shrink: 0;
+}
+
+.photo-box img {
+    width: 130px;
+    height: 130px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 4px solid #f0f0f0;
+}
+
+.availability-dot {
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    right: 5px;
+    bottom: 8px;
+
+    border-radius: 50%;
+
+    background: #20b15a;
+
+    border: 3px solid white;
+}
+
+.availability-dot.offline {
+    background: #aaa;
+}
+
+.seller-main-info h2 {
+    font-size: 27px;
+    margin-bottom: 6px;
+}
+
+.seller-main-info > p {
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+.rating span:last-child {
+    color: #888;
+}
+
+.location {
+    font-size: 14px !important;
+    color: #666 !important;
+}
+
+
+/* STATUS */
+
+.status-card {
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+
+    box-shadow: 0 3px 15px rgba(0,0,0,.04);
+}
+
+.status-card strong {
+    font-size: 15px;
+}
+
+.status-card p {
+    color: #777;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+
+/* SWITCH */
+
+.switch {
+    position: relative;
+
+    width: 52px;
+    height: 29px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    inset: 0;
+
+    background: #ccc;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 23px;
+    height: 23px;
+
+    left: 3px;
+    top: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    transition: .25s;
+}
+
+.switch input:checked + .slider {
+    background: #111;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(23px);
+}
+
+
+/* CARD */
+
+.profile-card {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 24px;
+
+    margin-bottom: 18px;
+
+    box-shadow: 0 3px 15px rgba(0,0,0,.04);
+}
+
+.profile-card h3 {
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+
+/* INFO GRID */
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+.info-box {
+    background: #f7f7f8;
+
+    border-radius: 13px;
+
+    padding: 16px;
+}
+
+.info-box span {
+    display: block;
+
+    color: #888;
+
+    font-size: 12px;
+
+    margin-bottom: 8px;
+}
+
+.info-box strong {
+    font-size: 15px;
+}
+
+
+/* ABOUT */
+
+.about-text {
+    color: #666;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+
+/* SERVICES */
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.section-heading h3 {
+    margin: 0;
+}
+
+.section-heading button {
+    border: none;
+
+    background: #111;
+    color: white;
+
+    padding: 9px 14px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+}
+
+
+.services-list {
+    display: grid;
+
+    gap: 12px;
+}
+
+.service-item {
+    padding: 16px;
+
+    background: #f8f8f9;
+
+    border-radius: 14px;
+
+    border: 1px solid #eee;
+}
+
+.service-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.service-top h4 {
+    font-size: 16px;
+}
+
+.service-price {
+    font-weight: bold;
+}
+
+.service-description {
+    margin-top: 7px;
+
+    font-size: 13px;
+
+    color: #777;
+
+    line-height: 1.5;
+}
+
+.empty-service {
+    text-align: center;
+
+    padding: 35px 15px;
+
+    border: 2px dashed #ddd;
+
+    border-radius: 14px;
+
+    color: #888;
+}
+
+.empty-service div {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+.empty-service strong {
+    display: block;
+
+    color: #444;
+
+    margin-bottom: 6px;
+}
+
+.empty-service p {
+    font-size: 12px;
+}
+
+
+/* HOURS */
+
+.working-hours {
+    display: grid;
+
+    gap: 12px;
+}
+
+.working-hours div {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 14px;
+
+    background: #f7f7f8;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+}
+
+.working-hours span {
+    color: #777;
+}
+
+
+/* ACTIONS */
+
+.profile-actions {
+    display: flex;
+
+    gap: 12px;
+}
+
+.primary-btn,
+.secondary-btn {
+    flex: 1;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.primary-btn {
+    border: none;
+
+    background: #111;
+
+    color: white;
+}
+
+.secondary-btn {
+    background: white;
+
+    color: #222;
+
+    border: 1px solid #ddd;
+}
+
+.primary-btn:hover {
+    opacity: .9;
+}
+
+
+/* MODAL */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.55);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 100;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-box {
+    background: white;
+
+    width: 100%;
+    max-width: 500px;
+
+    border-radius: 20px;
+
+    padding: 28px;
+
+    position: relative;
+}
+
+.modal-box h2 {
+    margin-bottom: 5px;
+}
+
+.modal-subtitle {
+    color: #888;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+.close-modal {
+    position: absolute;
+
+    right: 18px;
+    top: 15px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    background: #f2f2f2;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+.modal-box label {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin: 15px 0 7px;
+}
+
+.modal-box input,
+.modal-box textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-family: inherit;
+}
+
+.modal-box textarea {
+    height: 100px;
+
+    resize: vertical;
+}
+
+.full {
+    width: 100%;
+
+    margin-top: 18px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .profile-header {
+        padding: 0 14px;
+    }
+
+    .profile-container {
+        margin-top: 18px;
+
+        padding: 0 12px 35px;
+    }
+
+    .seller-hero {
+        padding: 22px;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .seller-main-info h2 {
+        font-size: 22px;
+    }
+
+    .rating {
+        justify-content: center;
+    }
+
+    .info-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .profile-actions {
+        flex-direction: column;
+    }
+
+    .working-hours div {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+}

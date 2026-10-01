@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Send Request | AHD Marketplace</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/request.css">
+</head>
+
+<body>
+
+<!-- ================================
+     HEADER
+================================ -->
+
+<header class="request-header">
+
+    <div class="brand-area">
+
+        <a href="home.html" class="logo">
+            AHD
+        </a>
+
+        <span class="brand-text">
+            Marketplace
+        </span>
+
+    </div>
+
+
+    <nav class="header-actions">
+
+        <a href="home.html" class="header-link">
+            Home
+        </a>
+
+        <a href="matches.html" class="header-link">
+            Matches
+        </a>
+
+        <a href="messages.html" class="header-link">
+            Messages
+        </a>
+
+        <a href="account.html" class="account-btn">
+            Account
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- ================================
+     MAIN
+================================ -->
+
+<main class="request-page">
+
+
+    <!-- PAGE HEADING -->
+
+    <section class="page-heading">
+
+        <span class="heading-label">
+            AHD MARKETPLACE
+        </span>
+
+        <h1>
+            Send Purchase Request
+        </h1>
+
+        <p>
+            Apni requirement share karein aur AHD par matching products
+            aur sellers find karein.
+        </p>
+
+    </section>
+
+
+
+    <section class="request-layout">
+
+
+ 
+
+
+
+            <!-- =================================
+                 CUSTOMER REQUIREMENT
+            ================================== -->
+
+            <div class="request-card requirement-card">
+
+
+                <div class="card-title">
+
+                    <span class="title-icon requirement-icon">
+                        🎯
+                    </span>
+
+                    <div>
+
+                        <h2>
+                            Customer Requirement
+                        </h2>
+
+                        <p>
+                            Aapko exactly kya chahiye? Ye information matching
+                            system ke liye important hai.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WHAT CUSTOMER NEEDS -->
+
+                <div class="form-group">
+
+                    <label for="requiredProduct">
+
+                        Mujhe kya chahiye?
+
+                        <span>*</span>
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="requiredProduct"
+                        name="requiredProduct"
+                        placeholder="Example: Dell laptop, iPhone 14, study table..."
+                        maxlength="120"
+                        required
+                    >
+
+
+                    <small>
+                        Product ya service ka naam clearly enter karein.
+                    </small>
+
+                </div>
+
+
+
+                <!-- REQUIRED CATEGORY -->
+
+                <div class="form-group">
+
+                    <label for="requiredCategory">
+
+                        Required Category
+
+                        <span>*</span>
+
+                    </label>
+
+
+                    <select
+                        id="requiredCategory"
+                        name="requiredCategory"
+                        required
+                    >
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <option value="Mobiles">
+                            Mobiles
+                        </option>
+
+                        <option value="Laptops">
+                            Laptops
+                        </option>
+
+                        <option value="Computers">
+                            Computers
+                        </option>
+
+                        <option value="Electronics">
+                            Electronics
+                        </option>
+
+                        <option value="Vehicles">
+                            Vehicles
+                        </option>
+
+                        <option value="Furniture">
+                            Furniture
+                        </option>
+
+                        <option value="Fashion">
+                            Fashion
+                        </option>
+
+                        <option value="Books">
+                            Books
+                        </option>
+
+                        <option value="Appliances">
+                            Appliances
+                        </option>
+
+                        <option value="Sports">
+                            Sports
+                        </option>
+
+                        <option value="Services">
+                            Services
+                        </option>
+
+                        <option value="Jobs">
+                            Jobs
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- CONDITION -->
+
+                <div class="form-group">
+
+                    <label for="requiredCondition">
+
+                        Preferred Condition
+
+                        <span>*</span>
+
+                    </label>
+
+
+                    <select
+                        id="requiredCondition"
+                        name="requiredCondition"
+                        required
+                    >
+
+                        <option value="">
+                            Select Condition
+                        </option>
+
+                        <option value="New">
+                            New
+                        </option>
+
+                        <option value="Like New">
+                            Like New
+                        </option>
+
+                        <option value="Good">
+                            Good
+                        </option>
+
+                        <option value="Fair">
+                            Fair
+                        </option>
+
+                        <option value="Any">
+                            Any Condition
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- BUDGET -->
+
+                <div class="form-group">
+
+                    <label for="maximumBudget">
+
+                        Maximum Budget
+
+                        <span>*</span>
+
+                    </label>
+
+
+                    <div class="price-input">
+
+                        <span>
+                            ₹
+                        </span>
+
+
+                        <input
+                            type="number"
+                            id="maximumBudget"
+                            name="maximumBudget"
+                            placeholder="Maximum amount you can pay"
+                            min="1"
+                            step="0.01"
+                            required
+                        >
+
+                    </div>
+
+
+                    <small>
+                        Is budget ke andar matching products ko priority di jayegi.
+                    </small>
+
+                </div>
+
+
+
+                <!-- REQUIRED QUANTITY -->
+
+                <div class="form-group">
+
+                    <label for="requiredQuantity">
+
+                        Quantity Required
+
+                        <span>*</span>
+
+                    </label>
+
+
+                    <input
+                        type="number"
+                        id="requiredQuantity"
+                        name="requiredQuantity"
+                        value="1"
+                        min="1"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- REQUIREMENT DETAILS -->
+
+                <div class="form-group">
+
+                    <label for="requirementDetails">
+
+                        Requirement Details
+
+                        <span>*</span>
+
+                    </label>
+
+
+                    <textarea
+                        id="requirementDetails"
+                        name="requirementDetails"
+                        rows="6"
+                        maxlength="700"
+                        placeholder="Example: Mujhe Dell ya HP ka laptop chahiye. 8GB RAM, SSD aur battery achhi condition mein honi chahiye. Budget ₹30,000 tak hai."
+                        required
+                    ></textarea>
+
+
+                    <div class="character-count">
+
+                        <span id="requirementCount">
+                            0
+                        </span>
+
+                        /700
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PREFERRED BRAND -->
+
+                <div class="form-group">
+
+                    <label for="preferredBrand">
+
+                        Preferred Brand
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="preferredBrand"
+                        name="preferredBrand"
+                        placeholder="Example: Dell, HP, Samsung, Apple..."
+                        maxlength="100"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 OFFER / PURCHASE REQUEST
+            ================================== -->
+
+            <form
+                id="requestForm"
+                class="request-card"
+            >
+
+                <div class="card-title">
+
+                    <span class="title-icon">
+                        📝
+                    </span>
+
+                    <div>
+
+                        <h2>
+                            Purchase Request
+                        </h2>
+
+                        <p>
+                            Seller ko apna offer aur purchase preference batayein.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- OFFER PRICE -->
+
+                <div class="form-group">
+
+                    <label for="offerPrice">
+
+                        Your Offer Price
+
+                        <span>*</span>
+
+                    </label>
+
+
+                    <div class="price-input">
+
+                        <span>
+                            ₹
+                        </span>
+
+
+                        <input
+                            type="number"
+                            id="offerPrice"
+                            name="offerPrice"
+                            placeholder="Enter your offer"
+                            min="1"
+                            step="0.01"
+                            required
+                        >
+
+                    </div>
+
+
+                    <small>
+                        Seller ke listed price se different offer bhi de sakte hain.
+                    </small>
+
+                </div>
+
+
+
+                <!-- QUANTITY -->
+
+                <div class="form-group">
+
+                    <label for="quantity">
+
+                        Purchase Quantity
+
+                        <span>*</span>
+
+                    </label>
+
+
+                    <input
+                        type="number"
+                        id="quantity"
+                        name="quantity"
+                        min="1"
+                        value="1"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- MESSAGE -->
+
+                <div class="form-group">
+
+                    <label for="requestMessage">
+
+                        Message to Seller
+
+                    </label>
+
+
+                    <textarea
+                        id="requestMessage"
+                        name="requestMessage"
+                        rows="5"
+                        maxlength="500"
+                        placeholder="Example: Product available hai to please contact karein. Price thoda negotiate karna hai."
+                    ></textarea>
+
+
+                    <div class="character-count">
+
+                        <span id="messageCount">
+                            0
+                        </span>
+
+                        /500
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- LOCATION -->
+
+                <div class="form-group">
+
+                    <label for="requestLocation">
+
+                        Your Location
+
+                        <span>*</span>
+
+                    </label>
+
+
+                    <div class="location-input">
+
+                        <input
+                            type="text"
+                            id="requestLocation"
+                            name="location"
+                            placeholder="Enter your city/location"
+                            required
+                        >
+
+
+                        <button
+                            type="button"
+                            id="detectLocation"
+                            class="detect-btn"
+                        >
+                            📍 Detect
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DELIVERY -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Delivery Preference
+
+                        <span>*</span>
+
+                    </label>
+
+
+                    <div class="option-grid">
+
+
+                        <label class="option-box">
+
+                            <input
+                                type="radio"
+                                name="delivery"
+                                value="pickup"
+                                checked
+                            >
+
+
+                            <div>
+
+                                <strong>
+                                    🏪 Self Pickup
+                                </strong>
+
+                                <small>
+                                    Seller se directly collect karunga
+                                </small>
+
+                            </div>
+
+                        </label>
+
+
+
+                        <label class="option-box">
+
+                            <input
+                                type="radio"
+                                name="delivery"
+                                value="delivery"
+                            >
+
+
+                            <div>
+
+                                <strong>
+                                    🚚 Delivery
+                                </strong>
+
+                                <small>
+                                    Product deliver karwana hai
+                                </small>
+
+                            </div>
+
+                        </label>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CONTACT -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Preferred Contact Method
+
+                        <span>*</span>
+
+                    </label>
+
+
+                    <div class="contact-options">
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="contact"
+                                value="message"
+                                checked
+                            >
+
+                            💬 Message
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="contact"
+                                value="phone"
+                            >
+
+                            📞 Phone
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="contact"
+                                value="email"
+                            >
+
+                            ✉️ Email
+
+                        </label>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TERMS -->
+
+                <div class="terms-box">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="requestTerms"
+                            required
+                        >
+
+
+                        <span>
+                            Main confirm karta hoon ki request mein di gayi
+                            information correct hai aur main seller ke response
+                            ka wait karunga.
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- STATUS MESSAGE -->
+
+                <div
+                    id="requestMessageBox"
+                    class="request-message-box"
+                ></div>
+
+
+
+                <!-- ACTIONS -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        id="cancelRequest"
+                        class="secondary-btn"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        Send Request →
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- =================================
+             RIGHT SIDE
+        ================================== -->
+
+        <aside class="request-right">
+
+
+            <!-- HOW IT WORKS -->
+
+            <div class="side-card">
+
+                <h3>
+                    🔄 How AHD Request Works
+                </h3>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        1
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Tell Us What You Need
+                        </strong>
+
+                        <p>
+                            Apni exact requirement, budget aur condition enter karein.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        2
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Send Request
+                        </strong>
+
+                        <p>
+                            Aapki requirement AHD matching system ko bheji jayegi.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        3
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Find Matches
+                        </strong>
+
+                        <p>
+                            Similar products aur sellers ko match kiya jayega.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        4
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Complete Deal
+                        </strong>
+
+                        <p>
+                            Seller se baat karke final deal complete karein.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MATCHING INFO -->
+
+            <div class="side-card matching-card">
+
+                <div class="matching-icon">
+                    🎯
+                </div>
+
+
+                <h3>
+                    Better Requirement = Better Match
+                </h3>
+
+
+                <p>
+                    Product ka naam, category, budget, condition aur details
+                    jitni clear hongi, matching utni better hogi.
+                </p>
+
+            </div>
+
+
+
+            <!-- SAFETY -->
+
+            <div class="side-card safety-card">
+
+                <h3>
+                    🛡️ Safety Tips
+                </h3>
+
+
+                <ul>
+
+                    <li>
+                        Product ko personally verify karein.
+                    </li>
+
+                    <li>
+                        Suspicious payment links par click na karein.
+                    </li>
+
+                    <li>
+                        OTP kisi ke saath share na karein.
+                    </li>
+
+                    <li>
+                        Public place mein meeting prefer karein.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- STATUS -->
+
+            <div class="side-card status-card">
+
+                <div class="status-icon">
+                    ⏳
+                </div>
+
+
+                <h3>
+                    Request Status
+                </h3>
+
+
+                <span class="status-pending">
+                    PENDING
+                </span>
+
+
+                <p>
+                    Request submit hone ke baad matching process start hoga.
+                </p>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+</main>
+
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/request.js"></script>
+
+</body>
+</html>

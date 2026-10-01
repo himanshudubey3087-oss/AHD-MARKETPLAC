@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "AHD Marketplace - Hyperlocal Buy, Sell & Deals Platform",
   "scripts": {
+    "build": "node build.js",
     "start": "node AHD-BACKEND/server.js"
   },
   "engines": {

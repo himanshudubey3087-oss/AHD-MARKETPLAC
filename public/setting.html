@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AHD - Settings</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/settings.css">
+</head>
+
+<body>
+
+<header class="top-header">
+
+    <button class="icon-btn" id="backBtn" title="Back">
+        ←
+    </button>
+
+    <div class="header-title">
+        <h1>Settings</h1>
+        <p>Manage your AHD account</p>
+    </div>
+
+</header>
+
+
+<main class="settings-container">
+
+    <!-- PROFILE -->
+
+    <section class="profile-card">
+
+        <div class="profile-photo-container">
+
+           <img
+    id="profilePhoto"
+    alt="Profile Photo"
+    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Crect width='120' height='120' rx='60' fill='%23e5e7eb'/%3E%3Ctext x='60' y='68' text-anchor='middle' font-size='45'%3E👤%3C/text%3E%3C/svg%3E">
+
+            <button
+                id="photoButton"
+                class="photo-button"
+                title="Change profile photo">
+                📷
+            </button>
+
+            <input
+                type="file"
+                id="photoInput"
+                accept="image/*"
+                hidden>
+
+        </div>
+
+
+        <div class="profile-details">
+
+            <h2 id="userName">AHD User</h2>
+
+            <p id="userEmail">
+                user@example.com
+            </p>
+
+            <span id="userRole" class="role-badge">
+                Customer
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACCOUNT -->
+
+    <section class="settings-card">
+
+        <div class="section-title">
+            <span>ACCOUNT</span>
+        </div>
+
+
+        <button class="setting-row" id="editProfileBtn">
+
+            <div class="setting-icon blue">
+                👤
+            </div>
+
+            <div class="setting-info">
+                <strong>Edit Profile</strong>
+                <span>Change your personal information</span>
+            </div>
+
+            <span class="arrow">›</span>
+
+        </button>
+
+
+        <button class="setting-row" id="serviceProfileBtn">
+
+            <div class="setting-icon orange">
+                🛠️
+            </div>
+
+            <div class="setting-info">
+                <strong>Service Profile</strong>
+                <span>Manage your services and professional profile</span>
+            </div>
+
+            <span class="arrow">›</span>
+
+        </button>
+
+
+        <button class="setting-row" id="changePasswordBtn">
+
+            <div class="setting-icon purple">
+                🔐
+            </div>
+
+            <div class="setting-info">
+                <strong>Change Password</strong>
+                <span>Update your account password</span>
+            </div>
+
+            <span class="arrow">›</span>
+
+        </button>
+
+    </section>
+
+
+    <!-- PREFERENCES -->
+
+    <section class="settings-card">
+
+        <div class="section-title">
+            <span>PREFERENCES</span>
+        </div>
+
+
+        <div class="setting-row">
+
+            <div class="setting-icon green">
+                🔔
+            </div>
+
+            <div class="setting-info">
+                <strong>Notifications</strong>
+                <span>Receive AHD notifications</span>
+            </div>
+
+            <label class="switch">
+
+                <input
+                    type="checkbox"
+                    id="notificationToggle"
+                    checked>
+
+                <span class="slider"></span>
+
+            </label>
+
+        </div>
+
+
+        <button class="setting-row" id="locationBtn">
+
+            <div class="setting-icon red">
+                📍
+            </div>
+
+            <div class="setting-info">
+
+                <strong>Location</strong>
+
+                <span id="locationValue">
+                    Agra, Uttar Pradesh
+                </span>
+
+            </div>
+
+            <span class="arrow">›</span>
+
+        </button>
+
+    </section>
+
+
+    <!-- SUPPORT -->
+
+    <section class="settings-card">
+
+        <div class="section-title">
+            <span>SUPPORT</span>
+        </div>
+
+
+        <button class="setting-row" id="helpBtn">
+
+            <div class="setting-icon cyan">
+                ❓
+            </div>
+
+            <div class="setting-info">
+
+                <strong>Help & Support</strong>
+
+                <span>Get help with AHD</span>
+
+            </div>
+
+            <span class="arrow">›</span>
+
+        </button>
+
+
+        <button class="setting-row" id="aboutBtn">
+
+            <div class="setting-icon gray">
+                ℹ️
+            </div>
+
+            <div class="setting-info">
+
+                <strong>About AHD</strong>
+
+                <span>Learn more about AHD Marketplace</span>
+
+            </div>
+
+            <span class="arrow">›</span>
+
+        </button>
+
+    </section>
+
+
+    <!-- LOGOUT -->
+
+    <button class="logout-btn" id="logoutBtn">
+        <span>🚪</span>
+        Logout
+    </button>
+
+
+    <p class="app-version">
+        AHD Marketplace<br>
+        Version 1.0
+    </p>
+
+</main>
+
+
+<!-- LOCATION MODAL -->
+
+<div class="modal" id="locationModal">
+
+    <div class="modal-box">
+
+        <button class="modal-close" id="closeLocationModal">
+            ×
+        </button>
+
+        <div class="modal-icon">
+            📍
+        </div>
+
+        <h2>Update Location</h2>
+
+        <p>
+            Enter your area so AHD can show nearby products
+            and services first.
+        </p>
+
+        <input
+            type="text"
+            id="locationInput"
+            placeholder="e.g. Agra, Uttar Pradesh">
+
+        <button class="modal-primary-btn" id="saveLocationBtn">
+            Save Location
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ABOUT MODAL -->
+
+<div class="modal" id="aboutModal">
+
+    <div class="modal-box">
+
+        <button class="modal-close" id="closeAboutModal">
+            ×
+        </button>
+
+        <div class="modal-icon">
+            🏪
+        </div>
+
+        <h2>AHD Marketplace</h2>
+
+        <p>
+            <strong>Kuch bhi sell karo, kuch bhi kharido.</strong>
+        </p>
+
+        <p>
+            AHD is a marketplace where users can buy,
+            sell, request products and find nearby services.
+        </p>
+
+        <div class="about-version">
+            AHD Marketplace • Version 1.0
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/settings.js"></script>
+
+</body>
+</html>

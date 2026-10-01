@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Home | AHD Marketplace</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/home.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="main-header">
+
+    <div class="header-container">
+
+
+        <!-- LOGO -->
+
+        <a
+            href="home.html"
+            class="logo"
+        >
+            AHD
+        </a>
+
+
+        <!-- LOCATION -->
+
+        <div class="location-box" onclick="if(window.AHDLocation) window.AHDLocation.promptChangeLocation()" title="Click to change location">
+
+            <span>📍</span>
+
+            <span data-location id="userLocation">
+                Detecting location...
+            </span>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                data-search
+                id="homeSearchInput"
+                placeholder="Search products, services, jobs..."
+                onkeydown="if(event.key==='Enter') window.location.href='search.html?q='+encodeURIComponent(this.value)"
+            >
+
+            <button class="search-btn" onclick="const q=document.getElementById('homeSearchInput').value; window.location.href='search.html?q='+encodeURIComponent(q)">
+                🔍
+            </button>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="main-nav">
+
+            <a href="home.html" class="active">
+                Home
+            </a>
+
+            <a href="services.html">
+                Services
+            </a>
+
+            <a href="jobs.html">
+                Jobs
+            </a>
+
+            <a
+                href="sell.html"
+                class="sell-nav-btn"
+            >
+                + Sell
+            </a>
+
+            <a href="notifications.html" class="nav-icon-link" title="Notifications">
+                🔔
+            </a>
+
+            <a href="messages.html">
+                Messages
+            </a>
+
+            <a href="account.html" class="auth-nav-btn">
+                Account
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="page">
+
+
+<!-- =====================================================
+     HERO SECTION
+===================================================== -->
+
+<section class="hero-section">
+
+
+    <div class="hero-content">
+
+        <span class="hero-label">
+            AHD MARKETPLACE
+        </span>
+
+
+        <h1>
+
+            Buy, Sell & Discover
+
+            <br>
+
+            Everything Near You
+
+        </h1>
+
+
+        <p>
+
+            <h3>
+             Buy anything,
+             Sell anything.
+            </h3>
+
+            <br>
+
+            Products, services,
+            jobs aur opportunities —
+            sab ek hi jagah.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="search.html"
+                class="primary-btn"
+            >
+                🔎 Explore Products
+            </a>
+
+
+            <a
+                href="sell.html"
+                class="secondary-btn"
+            >
+                + Sell Something
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- LOCATION CARD -->
+
+ <!--<div class="hero-card">
+
+        <div class="hero-card-icon">
+            📍
+        </div>
+
+        <h3>
+            Products Near You
+        </h3>
+
+        <p>
+            AHD will show products
+            around your location first.
+        </p>
+
+
+        <div class="location-status">
+
+            <span class="status-dot"></span>
+
+            <span data-location>
+                Finding nearby listings...
+            </span>
+
+        </div>
+
+    </div>-->
+
+
+</section>
+
+
+
+<!-- =====================================================
+     QUICK ACTIONS
+===================================================== -->
+
+<section>
+
+    <h2 class="section-title">
+        What do you want to do?
+    </h2>
+
+
+    <div class="quick-actions">
+
+
+        <a
+            href="search.html"
+            class="quick-card"
+        >
+
+            <div class="quick-icon">
+                🛒
+            </div>
+
+            <div>
+
+                <h3>
+                    Buy
+                </h3>
+
+                <p>
+                    Find products near you
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <a
+            href="sell.html"
+            class="quick-card"
+        >
+
+            <div class="quick-icon">
+                🏷️
+            </div>
+
+            <div>
+
+                <h3>
+                    Sell
+                </h3>
+
+                <p>
+                    Sell anything easily
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <a
+            href="request.html"
+            class="quick-card"
+        >
+
+            <div class="quick-icon">
+                📢
+            </div>
+
+            <div>
+
+                <h3>
+                    Request
+                </h3>
+
+                <p>
+                    Tell sellers what you need
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <a
+            href="services.html"
+            class="quick-card"
+        >
+
+            <div class="quick-icon">
+                🛠️
+            </div>
+
+            <div>
+
+                <h3>
+                    Services
+                </h3>
+
+                <p>
+                    Find professionals nearby
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <a
+            href="jobs.html"
+            class="quick-card"
+        >
+
+            <div class="quick-icon">
+                💼
+            </div>
+
+            <div>
+
+                <h3>
+                    Jobs
+                </h3>
+
+                <p>
+                    Find work opportunities
+                </p>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CATEGORIES
+===================================================== -->
+
+<section>
+
+    <h2 class="section-title">
+        Browse Categories
+    </h2>
+
+
+    <div class="category-grid">
+
+
+        <a
+            href="category.html"
+            class="category-card"
+        >
+
+            <div class="category-icon">
+                📱
+            </div>
+
+            <span>
+                Mobiles
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="category.html"
+            class="category-card"
+        >
+
+            <div class="category-icon">
+                💻
+            </div>
+
+            <span>
+                Electronics
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="category.html"
+            class="category-card"
+        >
+
+            <div class="category-icon">
+                🚗
+            </div>
+
+            <span>
+                Vehicles
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="category.html"
+            class="category-card"
+        >
+
+            <div class="category-icon">
+                🏠
+            </div>
+
+            <span>
+                Home
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="category.html"
+            class="category-card"
+        >
+
+            <div class="category-icon">
+                👕
+            </div>
+
+            <span>
+                Fashion
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="services.html"
+            class="category-card"
+        >
+
+            <div class="category-icon">
+                🛠️
+            </div>
+
+            <span>
+                Services
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="jobs.html"
+            class="category-card"
+        >
+
+            <div class="category-icon">
+                💼
+            </div>
+
+            <span>
+                Jobs
+            </span>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     NEARBY / LATEST PRODUCTS
+===================================================== -->
+
+<section class="nearby-section" id="nearbySection">
+
+    <div class="section-heading-row">
+
+        <div>
+            <h2 class="section-title" id="nearbySectionTitle">
+                📍 Nearby Products Near You
+            </h2>
+            <p class="section-subtitle" id="nearbySubtitle" style="color: var(--text-secondary); font-size: 13.5px; margin: 4px 0 0;">
+                Showing listings closest to your live location
+            </p>
+        </div>
+
+        <a
+            href="search.html"
+            class="view-all"
+        >
+            View All Nearby →
+        </a>
+
+    </div>
+
+
+    <div
+        class="product-grid"
+        id="products"
+    >
+
+        <!-- Products will be loaded by home.js -->
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     REQUEST BANNER
+===================================================== -->
+
+<section class="request-banner">
+
+    <div>
+
+        <span>
+            CAN'T FIND WHAT YOU NEED?
+        </span>
+
+        <h2>
+            Post a Request
+        </h2>
+
+        <p>
+            Tell the AHD community what
+            you are looking for.
+        </p>
+
+    </div>
+
+
+    <a
+        href="request.html"
+        class="primary-btn"
+    >
+        Post Request
+    </a>
+
+</section>
+
+
+
+<!-- =====================================================
+     AHD FLOW
+===================================================== -->
+
+<section>
+
+    <h2 class="section-title">
+        How AHD Works
+    </h2>
+
+
+    <div class="flow-grid">
+
+
+        <div class="flow-card">
+
+            <div class="flow-number">
+                01
+            </div>
+
+            <h3>
+                Buy
+            </h3>
+
+            <p>
+                Search and discover
+                products near you.
+            </p>
+
+        </div>
+
+
+
+        <div class="flow-card">
+
+            <div class="flow-number">
+                02
+            </div>
+
+            <h3>
+                Sell
+            </h3>
+
+            <p>
+                List your product
+                with photos and price.
+            </p>
+
+        </div>
+
+
+
+        <div class="flow-card">
+
+            <div class="flow-number">
+                03
+            </div>
+
+            <h3>
+                Request
+            </h3>
+
+            <p>
+                Post exactly what
+                you are looking for.
+            </p>
+
+        </div>
+
+
+
+        <div class="flow-card">
+
+            <div class="flow-number">
+                04
+            </div>
+
+            <h3>
+                Match
+            </h3>
+
+            <p>
+                AHD finds suitable
+                buyers and sellers.
+            </p>
+
+        </div>
+
+
+
+        <div class="flow-card">
+
+            <div class="flow-number">
+                05
+            </div>
+
+            <h3>
+                Deal
+            </h3>
+
+            <p>
+                Connect, negotiate
+                and complete the deal.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="main-footer">
+
+    <div class="footer-container">
+
+        <div>
+
+            <div class="logo">
+                AHD
+            </div>
+
+            <p>
+                Sell anything,
+                buy anything 
+                
+            </p>
+
+        </div>
+
+
+        <div>
+            <b>Marketplace</b>
+            <a href="search.html">Buy Products</a>
+            <a href="sell.html">Sell Item</a>
+            <a href="request.html">Post Request</a>
+            <a href="matches.html">Match Deals</a>
+        </div>
+
+        <div>
+            <b>Discover</b>
+            <a href="services.html">Local Services</a>
+            <a href="jobs.html">Find Jobs</a>
+            <a href="category.html">All Categories</a>
+        </div>
+
+        <div>
+            <b>Account</b>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Create Account</a>
+            <a href="account.html">My Dashboard</a>
+            <a href="settings.html">Settings</a>
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 AHD Marketplace
+
+        <span>
+            Buy • Sell • Request • Match • Deal
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/script.js"></script>
+
+<script src="js/home.js"></script>
+
+<script src="js/location.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+/* =========================================================
+   AHD MARKETPLACE - MODERN HOME & MARKETPLACE STYLESHEET
+   Clean hero, categories, quick actions, and product grid
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ================= QUICK ACTIONS ================= */
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 32px 0 45px;
+}
+
+.quick-card {
+    background: #ffffff;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: var(--transition);
+    box-shadow: var(--shadow-xs);
+}
+
+.quick-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+    background: #ffffff;
+}
+
+.quick-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: var(--radius-md);
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.quick-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.quick-card p {
+    color: var(--text-secondary);
+    font-size: 12.5px;
+}
+
+/* ================= SECTION HEADINGS ================= */
+.section-heading-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0 20px;
+}
+
+.section-heading-row h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+}
+
+.view-all {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: var(--transition);
+}
+
+.view-all:hover {
+    color: var(--primary-hover);
+    transform: translateX(3px);
+}
+
+/* ================= REQUEST & MATCH BANNER ================= */
+.request-banner {
+    margin: 55px 0 40px;
+    padding: 38px 40px;
+    border-radius: var(--radius-xl);
+    background:
+        radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.10), transparent 40%),
+        linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
+    border: 1.5px solid #c7d2fe;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    box-shadow: var(--shadow-sm);
+    flex-wrap: wrap;
+}
+
+.request-banner-content {
+    max-width: 620px;
+}
+
+.request-banner span {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.request-banner h2 {
+    margin: 8px 0 6px;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.request-banner p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* ================= HOW IT WORKS FLOW ================= */
+.flow-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.flow-card {
+    background: #ffffff;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px 20px;
+    position: relative;
+    box-shadow: var(--shadow-xs);
+    transition: var(--transition);
+}
+
+.flow-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.flow-number {
+    font-size: 13px;
+    font-weight: 900;
+    color: var(--primary);
+    margin-bottom: 12px;
+    background: var(--primary-light);
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+}
+
+.flow-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+}
+
+.flow-card p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* ================= AUTH STATUS PILL IN NAVBAR ================= */
+.user-nav-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 12px 5px 6px;
+    border-radius: var(--radius-full);
+    background: var(--primary-light);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 13.5px;
+    border: 1px solid rgba(79, 70, 229, 0.2);
+    transition: var(--transition);
+}
+
+.user-nav-pill:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.user-nav-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.user-nav-pill:hover .user-nav-avatar {
+    background: #ffffff;
+    color: var(--primary);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .quick-actions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .flow-grid {
+        grid-template-columns: 1fr;
+    }
+    .request-banner {
+        padding: 26px 20px;
+    }
+    .request-banner h2 {
+        font-size: 22px;
+    }
+}

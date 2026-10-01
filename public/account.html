@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | AHD Marketplace</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/account.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="account-header">
+    <div class="account-header-left">
+        <a href="home.html" class="ahd-logo">AHD</a>
+        <div class="header-location">
+            📍 <span id="userLocation">Agra, Uttar Pradesh</span>
+        </div>
+    </div>
+
+    <nav class="account-header-actions">
+        <a href="home.html">🏠 Home</a>
+        <a href="messages.html">💬 Messages</a>
+        <a href="notifications.html" class="notification-link" title="Notifications">
+            🔔 <span id="notificationBadge" class="notification-badge">0</span>
+        </a>
+    </nav>
+</header>
+
+<!-- ================= MAIN CONTAINER ================= -->
+<main class="account-container" id="accountMainContainer">
+
+    <!-- PROFILE HERO CARD -->
+    <section class="profile-card" id="profileCardSection">
+        <div class="profile-main">
+            <div class="profile-photo-wrapper">
+                <div class="profile-photo" id="profilePhoto">👤</div>
+                <button type="button" class="photo-edit-btn" onclick="changeProfilePhoto()" title="Change profile photo">
+                    ✎
+                </button>
+            </div>
+
+            <div class="profile-info">
+                <div class="name-row">
+                    <h1 id="profileName">Loading User...</h1>
+                    <span class="verified-badge" id="verifiedBadge">✓ Verified</span>
+                </div>
+                <p id="profileType" class="profile-type">Customer Account</p>
+                <p class="member-since">Member since <span id="memberSince">2026</span></p>
+            </div>
+        </div>
+
+        <div class="profile-actions">
+            <button type="button" class="edit-profile-btn" onclick="editProfile()">
+                ✎ Edit Profile
+            </button>
+            <button type="button" class="settings-btn" onclick="openSettings()">
+                ⚙ Settings
+            </button>
+        </div>
+    </section>
+
+    <!-- ACCOUNT STATS CARDS -->
+    <section class="account-stats">
+        <div class="stat-box" onclick="showDashboardTab('deals')">
+            <strong id="purchaseCount">0</strong>
+            <span>Active Deals & Purchases</span>
+        </div>
+        <div class="stat-box" onclick="showDashboardTab('listings')">
+            <strong id="sellingCount">0</strong>
+            <span>My Listings</span>
+        </div>
+        <div class="stat-box" onclick="showDashboardTab('overview')">
+            <strong id="savedCount">0</strong>
+            <span>Saved Items</span>
+        </div>
+        <div class="stat-box" onclick="showDashboardTab('listings')">
+            <strong id="requestCount">0</strong>
+            <span>Deal Requests</span>
+        </div>
+    </section>
+
+    <!-- DASHBOARD NAVIGATION TABS -->
+    <div class="dashboard-tabs">
+        <button type="button" class="dashboard-tab active" id="tabOverview" onclick="showDashboardTab('overview')">
+            📋 Profile Overview
+        </button>
+        <button type="button" class="dashboard-tab" id="tabDeals" onclick="showDashboardTab('deals')">
+            🤝 My Deals & Orders
+        </button>
+        <button type="button" class="dashboard-tab" id="tabListings" onclick="showDashboardTab('listings')">
+            📦 My Items & Requests
+        </button>
+    </div>
+
+    <!-- TAB 1: OVERVIEW & PERSONAL INFORMATION -->
+    <div id="sectionOverview">
+        <section class="account-section">
+            <div class="section-heading">
+                <div>
+                    <h2>Personal Information</h2>
+                    <p>Your registered profile details on AHD Marketplace</p>
+                </div>
+                <button type="button" onclick="editProfile()">Edit Details</button>
+            </div>
+
+            <div class="information-grid">
+                <div class="information-item">
+                    <span class="info-label">Full Name</span>
+                    <strong id="infoName">—</strong>
+                </div>
+                <div class="information-item">
+                    <span class="info-label">Mobile Number</span>
+                    <strong id="infoMobile">—</strong>
+                </div>
+                <div class="information-item">
+                    <span class="info-label">Email Address</span>
+                    <strong id="infoEmail">—</strong>
+                </div>
+                <div class="information-item">
+                    <span class="info-label">Account Role</span>
+                    <strong id="infoAccountType">Customer</strong>
+                </div>
+                <div class="information-item">
+                    <span class="info-label">Current Location</span>
+                    <strong id="infoLocation">Agra, Uttar Pradesh</strong>
+                </div>
+                <div class="information-item">
+                    <span class="info-label">Account Status</span>
+                    <strong class="status-active">● Active & Verified</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUSTOMER SPECIFIC SHORTCUTS -->
+        <section class="account-section" id="customerSection">
+            <div class="section-heading">
+                <div>
+                    <h2>Customer Center</h2>
+                    <p>Manage your deal requests, matches, and saved items</p>
+                </div>
+            </div>
+
+            <div class="quick-actions-grid">
+                <div class="quick-action-card" onclick="openCustomerRequests()">
+                    <div class="quick-action-icon">📝</div>
+                    <strong>Post New Request</strong>
+                    <span>Can't find an item? Request a reverse deal</span>
+                </div>
+                <div class="quick-action-card" onclick="openCustomerDeals()">
+                    <div class="quick-action-icon">🤝</div>
+                    <strong>My Deals</strong>
+                    <span>Track accepted and pending deals</span>
+                </div>
+                <div class="quick-action-card" onclick="openCustomerMessages()">
+                    <div class="quick-action-icon">💬</div>
+                    <strong>Chat with Sellers</strong>
+                    <span>View conversations and inquiries</span>
+                </div>
+                <div class="quick-action-card" onclick="window.location.href='home.html'">
+                    <div class="quick-action-icon">🛍️</div>
+                    <strong>Browse Marketplace</strong>
+                    <span>Explore mobiles, electronics & furniture</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SELLER SPECIFIC SHORTCUTS -->
+        <section class="account-section" id="sellerSection" style="display: none;">
+            <div class="section-heading">
+                <div>
+                    <h2>Seller Management</h2>
+                    <p>Manage your listed inventory, incoming deals and buyer requests</p>
+                </div>
+            </div>
+
+            <div class="quick-actions-grid">
+                <div class="quick-action-card" onclick="openSellerAddProduct()">
+                    <div class="quick-action-icon">➕</div>
+                    <strong>Add New Product</strong>
+                    <span>Publish a product with photos & price</span>
+                </div>
+                <div class="quick-action-card" onclick="openSellerProducts()">
+                    <div class="quick-action-icon">📦</div>
+                    <strong>Active Listings</strong>
+                    <span>Manage and edit your products</span>
+                </div>
+                <div class="quick-action-card" onclick="openSellerDeals()">
+                    <div class="quick-action-icon">🤝</div>
+                    <strong>Incoming Deals</strong>
+                    <span>Accept offers from buyers</span>
+                </div>
+                <div class="quick-action-card" onclick="openSellerMessages()">
+                    <div class="quick-action-icon">💬</div>
+                    <strong>Customer Inquiries</strong>
+                    <span>Reply to buyer messages</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- TAB 2: DEALS & ORDERS -->
+    <div id="sectionDeals" style="display: none;">
+        <section class="account-section">
+            <div class="section-heading">
+                <div>
+                    <h2>Live Deals & Orders Tracker</h2>
+                    <p>Track your negotiations, accepted matches, and completed deals</p>
+                </div>
+                <button type="button" onclick="window.location.href='matches.html'">Find Matches</button>
+            </div>
+
+            <div id="dealsListContainer" class="deals-container">
+                <div style="text-align: center; padding: 30px; color: var(--text-muted);">
+                    Loading deals...
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- TAB 3: MY ITEMS & REQUESTS -->
+    <div id="sectionListings" style="display: none;">
+        <section class="account-section">
+            <div class="section-heading">
+                <div>
+                    <h2>My Items & Active Requests</h2>
+                    <p>Review products you are selling or requests you have published</p>
+                </div>
+                <button type="button" onclick="window.location.href='sell.html'">+ Add Product</button>
+            </div>
+
+            <div id="userItemsContainer">
+                <div style="text-align: center; padding: 30px; color: var(--text-muted);">
+                    Loading items...
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- LOGOUT SECTION -->
+    <section class="logout-section">
+        <button type="button" class="logout-btn" onclick="logoutAccount()">
+            🚪 Logout of Account
+        </button>
+    </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="account-footer">
+    <div>© 2026 AHD Marketplace — Hyperlocal Buy, Sell & Deal Engine</div>
+    <div>Buy • Sell • Request • Match • Deal</div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/location.js"></script>
+<script src="js/account.js"></script>
+
+</body>
+</html>

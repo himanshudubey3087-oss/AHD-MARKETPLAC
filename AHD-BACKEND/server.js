@@ -41,12 +41,21 @@ app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
 // Serve frontend static files
 const frontendPath = path.join(__dirname, "..");
+const publicPath = path.join(__dirname, "..", "public");
+
+if (fs.existsSync(publicPath)) {
+    app.use(express.static(publicPath, {
+        extensions: ["html", "htm"]
+    }));
+}
 app.use(express.static(frontendPath, {
     extensions: ["html", "htm"]
 }));
 
 // Route root to index.html
 app.get("/", (req, res) => {
+    const pubIndex = path.join(publicPath, "index.html");
+    if (fs.existsSync(pubIndex)) return res.sendFile(pubIndex);
     res.sendFile(path.join(frontendPath, "index.html"));
 });
 
@@ -55,6 +64,10 @@ app.get("/:page", (req, res, next) => {
     if (req.params.page === "api" || req.params.page.startsWith("api")) return next();
     const page = req.params.page;
     const htmlFile = page.endsWith(".html") ? page : `${page}.html`;
+    const pubFile = path.join(publicPath, htmlFile);
+    if (fs.existsSync(pubFile)) {
+        return res.sendFile(pubFile);
+    }
     const filePath = path.join(frontendPath, htmlFile);
     if (fs.existsSync(filePath)) {
         return res.sendFile(filePath);
@@ -630,6 +643,10 @@ app.get(["/setting.js", "/settings.js", "/js/setting.js", "/js/settings.js"], (r
 app.use((req, res) => {
     if (req.path.startsWith("/api/")) {
         return res.status(404).json({ error: "API endpoint not found", path: req.originalUrl });
+    }
+    const pubIndex = path.join(publicPath, "index.html");
+    if (fs.existsSync(pubIndex)) {
+        return res.sendFile(pubIndex);
     }
     const indexPath = path.join(frontendPath, "index.html");
     if (fs.existsSync(indexPath)) {

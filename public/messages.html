@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AHD Marketplace - Messages</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+    <link
+        rel="stylesheet"
+        href="css/messages.css"
+    >
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="main-header">
+    <div class="header-container">
+        <!-- LOGO -->
+        <a href="home.html" class="logo">
+            AHD <span>Marketplace</span>
+        </a>
+
+        <!-- LOCATION -->
+        <div class="location-box" onclick="if(window.AHDLocation) window.AHDLocation.promptChangeLocation()" title="Click to change location">
+            <span class="live-dot"></span>
+            <span>📍</span>
+            <span id="userLocation" data-location>Detecting location...</span>
+        </div>
+
+        <!-- SEARCH -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="msgSearchInput"
+                placeholder="Search conversations, buyers, sellers..."
+                onkeydown="if(event.key==='Enter') window.location.href='search.html?q='+encodeURIComponent(this.value)"
+            >
+            <button class="search-btn" onclick="const q=document.getElementById('msgSearchInput').value; window.location.href='search.html?q='+encodeURIComponent(q)">
+                🔍
+            </button>
+        </div>
+
+        <!-- NAVIGATION -->
+        <nav class="main-nav">
+            <a href="home.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="sell.html" class="sell-nav-btn">+ Sell</a>
+            <a href="notifications.html" class="nav-icon-link" title="Notifications">🔔</a>
+            <a href="messages.html" class="active">Messages</a>
+            <a href="account.html" class="auth-nav-btn">Account</a>
+        </nav>
+    </div>
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="messages-page">
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="chat-sidebar">
+
+
+        <div class="sidebar-header">
+
+            <div>
+
+                <h2>
+                    Messages
+                </h2>
+
+                <span class="chat-count">
+
+                    <span id="totalChats">
+                        0
+                    </span>
+
+                    conversations
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="chat-search">
+
+            <span>
+                🔍
+            </span>
+
+            <input
+                type="text"
+                id="chatSearch"
+                placeholder="Search conversations..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <!-- CHAT LIST -->
+
+        <div
+            class="chat-list"
+            id="chatList"
+        >
+
+            <!-- JS WILL LOAD CHATS -->
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         CHAT AREA
+    ================================================== -->
+
+    <section class="chat-section">
+
+
+        <!-- =================================================
+             EMPTY CHAT
+        ================================================== -->
+
+        <div
+            class="empty-chat"
+            id="emptyChat"
+        >
+
+            <div class="empty-icon">
+                💬
+            </div>
+
+            <h2>
+                Your Messages
+            </h2>
+
+            <p>
+                Select a conversation to start chatting.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ACTIVE CHAT
+        ================================================== -->
+
+        <div
+            class="active-chat"
+            id="activeChat"
+            style="display:none;"
+        >
+
+
+            <!-- =============================================
+                 CHAT HEADER
+            ============================================== -->
+
+            <div class="chat-header">
+
+
+                <div class="chat-person">
+
+
+                    <img
+                        src="https://i.pravatar.cc/150?img=12"
+                        id="activeAvatar"
+                        alt="User"
+                    >
+
+
+                    <div class="person-info">
+
+                        <h3 id="activeName">
+                            User
+                        </h3>
+
+                        <span id="activeStatus">
+                            Online
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- HEADER ACTIONS -->
+
+                <div class="chat-actions">
+
+                    <button
+                        type="button"
+                        onclick="openProfile()"
+                        title="View Profile"
+                    >
+                        👤
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="productButton"
+                        onclick="openProduct()"
+                        title="View Product"
+                    >
+                        🛍️
+                    </button>
+
+
+                    <button
+                        type="button"
+                        onclick="openDeal()"
+                        title="Deal"
+                    >
+                        🤝
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 PRODUCT / WORK DETAILS
+            ============================================== -->
+
+            <div
+                id="chatProduct"
+                class="chat-product"
+            >
+            </div>
+
+
+
+            <!-- =============================================
+                 WORKER REQUEST PANEL
+            ============================================== -->
+
+            <div
+                id="workerRequestPanel"
+                class="worker-request-panel"
+                style="display:none;"
+            >
+
+                <div class="request-heading">
+
+                    <div class="request-icon">
+                        📋
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Work Request
+                        </h3>
+
+                        <p>
+                            Worker selection request
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="requestSummary"
+                    class="request-summary"
+                >
+                </div>
+
+
+                <!-- REQUEST ACTIONS -->
+
+                <div class="request-actions">
+
+
+                    <button
+                        type="button"
+                        id="acceptRequestBtn"
+                        class="accept-btn"
+                    >
+                        ✓ Accept Request
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="rejectRequestBtn"
+                        class="reject-btn"
+                    >
+                        ✕ Reject Request
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 MESSAGES
+            ============================================== -->
+
+            <div
+                class="message-area"
+                id="messageArea"
+            >
+            </div>
+
+
+
+            <!-- =============================================
+                 TYPING
+            ============================================== -->
+
+            <div
+                class="typing-indicator"
+                id="typingIndicator"
+                style="display:none;"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+                typing...
+
+            </div>
+
+
+
+            <!-- =============================================
+                 MESSAGE FORM
+            ============================================== -->
+
+            <form
+                class="message-form"
+                id="messageForm"
+            >
+
+                <button
+                    type="button"
+                    class="attach-btn"
+                    title="Attach"
+                >
+                    📎
+                </button>
+
+
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Write a message..."
+                    autocomplete="off"
+                >
+
+
+                <button
+                    type="submit"
+                    class="send-btn"
+                    title="Send"
+                >
+                    ➤
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- =====================================================
+     MOBILE BOTTOM NAV
+===================================================== -->
+
+<nav class="mobile-nav">
+
+    <a href="home.html">
+        <span>⌂</span>
+        Home
+    </a>
+
+    <a href="search.html">
+        <span>🔍</span>
+        Search
+    </a>
+
+    <a href="sell.html">
+        <span>＋</span>
+        Sell
+    </a>
+
+    <a
+        href="messages.html"
+        class="active"
+    >
+        <span>💬</span>
+        Messages
+    </a>
+
+    <a href="account.html">
+        <span>👤</span>
+        Account
+    </a>
+
+</nav>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/location.js"></script>
+<script src="js/messages.js"></script>
+
+
+</body>
+
+</html>

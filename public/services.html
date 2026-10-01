@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AHD - Services</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/services.css"
+    >
+
+</head>
+
+<body>
+
+
+<header class="main-header">
+    <div class="header-container">
+        <!-- LOGO -->
+        <a href="home.html" class="logo">
+            AHD <span>Marketplace</span>
+        </a>
+
+        <!-- LOCATION -->
+        <div class="location-box" onclick="if(window.AHDLocation) window.AHDLocation.promptChangeLocation()" title="Click to change location">
+            <span class="live-dot"></span>
+            <span>📍</span>
+            <span id="userLocation" data-location>Detecting location...</span>
+        </div>
+
+        <!-- SEARCH -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="servicesSearchInput"
+                placeholder="Search local services, electricians, plumbers..."
+                onkeydown="if(event.key==='Enter') window.location.href='search.html?q='+encodeURIComponent(this.value)"
+            >
+            <button class="search-btn" onclick="const q=document.getElementById('servicesSearchInput').value; window.location.href='search.html?q='+encodeURIComponent(q)">
+                🔍
+            </button>
+        </div>
+
+        <!-- NAVIGATION -->
+        <nav class="main-nav">
+            <a href="home.html">Home</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="sell.html" class="sell-nav-btn">+ Sell</a>
+            <a href="notifications.html" class="nav-icon-link" title="Notifications">🔔</a>
+            <a href="messages.html">Messages</a>
+            <a href="account.html" class="auth-nav-btn">Account</a>
+        </nav>
+    </div>
+</header>
+
+<nav class="category-subnav">
+    <a href="services.html" class="cat-chip active">All Services</a>
+    <a href="services.html?category=Electrician" class="cat-chip">⚡ Electricians</a>
+    <a href="services.html?category=Plumber" class="cat-chip">🔧 Plumbers</a>
+    <a href="services.html?category=Carpenter" class="cat-chip">🪚 Carpenters</a>
+    <a href="services.html?category=Painter" class="cat-chip">🎨 Painters</a>
+    <a href="services.html?category=Cleaning" class="cat-chip">🧹 Cleaning</a>
+    <a href="seller-profile.html?seller=Neha%20Beauty%20Studio" class="cat-chip">💄 Beauty & Salon</a>
+    <a href="jobs.html" class="cat-chip">💼 Work & Jobs</a>
+</nav>
+
+
+
+<main class="services-container">
+
+
+    <!-- HERO -->
+
+    <section class="services-hero">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                AHD SERVICES
+            </span>
+
+            <h1>
+                Find the Right Service
+                Near You
+            </h1>
+
+            <p>
+                Electrician, plumber, tutor, mechanic,
+                designer, photographer और बहुत सारी
+                services एक ही जगह पर खोजें।
+            </p>
+
+
+            <div class="service-search">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="serviceSearch"
+                    placeholder="Search service..."
+                >
+
+                <button
+                    onclick="searchServices()"
+                >
+                    Search
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="visual-card">
+
+                <div class="visual-icon">
+                    🛠️
+                </div>
+
+                <strong>
+                    Local Experts
+                </strong>
+
+                <span>
+                    Find services near you
+                </span>
+
+            </div>
+
+
+            <div class="visual-card second">
+
+                <div class="visual-icon">
+                    ⭐
+                </div>
+
+                <strong>
+                    Trusted Providers
+                </strong>
+
+                <span>
+                    Compare before booking
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CATEGORIES -->
+
+    <section class="section-block">
+
+        <div class="section-title">
+
+            <div>
+
+                <span>
+                    EXPLORE
+                </span>
+
+                <h2>
+                    Service Categories
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="serviceCategories"
+            class="service-categories"
+        >
+            <!-- JS -->
+        </div>
+
+    </section>
+
+
+
+    <!-- FILTER -->
+
+    <section class="service-toolbar">
+
+        <div class="service-filter-buttons">
+
+            <button
+                class="service-filter active"
+                data-filter="all"
+            >
+                All
+            </button>
+
+            <button
+                class="service-filter"
+                data-filter="home"
+            >
+                Home
+            </button>
+
+            <button
+                class="service-filter"
+                data-filter="education"
+            >
+                Education
+            </button>
+
+            <button
+                class="service-filter"
+                data-filter="repair"
+            >
+                Repair
+            </button>
+
+            <button
+                class="service-filter"
+                data-filter="professional"
+            >
+                Professional
+            </button>
+
+        </div>
+
+
+        <select id="serviceSort">
+
+            <option value="recommended">
+                Recommended
+            </option>
+
+            <option value="rating">
+                Highest Rated
+            </option>
+
+            <option value="priceLow">
+                Price Low to High
+            </option>
+
+            <option value="priceHigh">
+                Price High to Low
+            </option>
+
+        </select>
+
+    </section>
+
+
+
+    <!-- SERVICES -->
+
+    <section>
+
+        <div
+            id="serviceGrid"
+            class="service-grid"
+        >
+            <!-- JS -->
+        </div>
+
+
+        <div
+            id="noServices"
+            class="no-services hidden"
+        >
+
+            <div>
+                🔎
+            </div>
+
+            <h3>
+                No services found
+            </h3>
+
+            <p>
+                Try another service or category.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/location.js"></script>
+<script src="js/services.js"></script>
+
+</body>
+
+</html>
