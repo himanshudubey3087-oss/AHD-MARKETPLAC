@@ -624,7 +624,7 @@ app.use((req, res) => {
 app.use((err, req, res, next) => {
     console.error("Express Global Error:", err.stack || err.message);
     if (!res.headersSent) {
-        res.status(500).json({ error: "Internal server error" });
+        res.status(500).json({ error: "Internal server error", message: err.message, stack: err.stack });
     }
 });
 
