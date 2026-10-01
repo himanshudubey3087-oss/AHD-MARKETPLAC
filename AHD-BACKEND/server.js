@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const fs = require("fs");
 const dataStore = require("./dataStore");
 
 // Crash prevention: prevent uncaught errors from stopping the process
@@ -624,7 +625,7 @@ app.use((req, res) => {
 app.use((err, req, res, next) => {
     console.error("Express Global Error:", err.stack || err.message);
     if (!res.headersSent) {
-        res.status(500).json({ error: "Internal server error", message: err.message, stack: err.stack });
+        res.status(500).json({ error: "Internal server error" });
     }
 });
 
