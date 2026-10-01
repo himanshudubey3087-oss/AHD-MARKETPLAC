@@ -1,0 +1,134 @@
+[
+  {
+    "requestId": "REQ-1790852113362",
+    "userId": "USR-GUEST",
+    "userName": "Test Customer 112851",
+    "userPhone": "9892553598",
+    "userEmail": "test_customer_112851@ahd.in",
+    "product": "iPhone 14 Pro",
+    "category": "Mobiles",
+    "budget": 65000,
+    "location": "Agra",
+    "details": "Urgent need for iPhone 14 in clean condition",
+    "status": "Pending",
+    "createdAt": "2026-10-01T10:55:13.358Z",
+    "updatedAt": null,
+    "requirement": {
+      "product": "iPhone 14 Pro",
+      "category": "Mobiles",
+      "budget": 65000,
+      "location": "Agra",
+      "details": "Urgent need for iPhone 14 in clean condition"
+    }
+  },
+  {
+    "requestId": "REQ-1790850829107",
+    "userId": "USR-GUEST",
+    "userName": "Test Customer 828647",
+    "userPhone": "9858827344",
+    "userEmail": "test_customer_828647@ahd.in",
+    "product": "iPhone 14 Pro",
+    "category": "Mobiles",
+    "budget": 65000,
+    "location": "Agra",
+    "details": "Urgent need for iPhone 14 in clean condition",
+    "status": "Pending",
+    "createdAt": "2026-10-01T10:33:49.106Z",
+    "updatedAt": null,
+    "requirement": {
+      "product": "iPhone 14 Pro",
+      "category": "Mobiles",
+      "budget": 65000,
+      "location": "Agra",
+      "details": "Urgent need for iPhone 14 in clean condition"
+    }
+  },
+  {
+    "requestId": "AHD-REQ-886154",
+    "userId": "USR-GUEST",
+    "userName": "Customer",
+    "userPhone": "",
+    "userEmail": "",
+    "product": "mini",
+    "category": "Mobiles",
+    "budget": 0,
+    "location": "Agra, Uttar Pradesh",
+    "details": "phone chahiyre",
+    "status": "Pending",
+    "createdAt": "2026-10-01T10:08:23.611Z",
+    "updatedAt": null,
+    "requirement": {
+      "product": "mini",
+      "category": "Mobiles",
+      "budget": 0,
+      "location": "Agra, Uttar Pradesh",
+      "details": "phone chahiyre"
+    }
+  },
+  {
+    "requestId": "REQ-1790848869792",
+    "userId": "USR-GUEST",
+    "userName": "Test Customer 869312",
+    "userPhone": "9849589874",
+    "userEmail": "test_customer_869312@ahd.in",
+    "product": "iPhone 14 Pro",
+    "category": "Mobiles",
+    "budget": 65000,
+    "location": "Agra",
+    "details": "Urgent need for iPhone 14 in clean condition",
+    "status": "Pending",
+    "createdAt": "2026-10-01T10:01:09.791Z",
+    "updatedAt": null,
+    "requirement": {
+      "product": "iPhone 14 Pro",
+      "category": "Mobiles",
+      "budget": 65000,
+      "location": "Agra",
+      "details": "Urgent need for iPhone 14 in clean condition"
+    }
+  },
+  {
+    "requestId": "REQ-1790848848723",
+    "userId": "USR-GUEST",
+    "userName": "Test Customer 848246",
+    "userPhone": "9858394986",
+    "userEmail": "test_customer_848246@ahd.in",
+    "product": "iPhone 14 Pro",
+    "category": "Mobiles",
+    "budget": 65000,
+    "location": "Agra",
+    "details": "Urgent need for iPhone 14 in clean condition",
+    "status": "Pending",
+    "createdAt": "2026-10-01T10:00:48.722Z",
+    "updatedAt": null,
+    "requirement": {
+      "product": "iPhone 14 Pro",
+      "category": "Mobiles",
+      "budget": 65000,
+      "location": "Agra",
+      "details": "Urgent need for iPhone 14 in clean condition"
+    }
+  },
+  {
+    "requestId": "REQ-1790708095049",
+    "userId": "USR-GUEST",
+    "userName": "Pooja Verma",
+    "userPhone": "9882949081",
+    "userEmail": "buyer_1790708094679@ahd.in",
+    "product": "OnePlus",
+    "category": "Mobiles",
+    "budget": 30000,
+    "location": "Agra",
+    "details": "Looking for OnePlus 5G phone under 30k in Agra",
+    "status": "Pending",
+    "createdAt": "2026-09-29T18:54:55.049Z",
+    "updatedAt": null,
+    "requirement": {
+      "product": "OnePlus",
+      "category": "Mobiles",
+      "budget": 30000,
+      "location": "Agra",
+      "details": "Looking for OnePlus 5G phone under 30k in Agra"
+    }
+  }
+]

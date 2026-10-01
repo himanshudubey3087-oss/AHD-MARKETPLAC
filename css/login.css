@@ -1,0 +1,639 @@
+/* =========================================================
+   AHD MARKETPLACE - MODERN AUTH & LOGIN STYLESHEET
+   Clean, intuitive, and responsive UI for Customer & Seller
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --primary-light: #eef2ff;
+    --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+
+    --seller: #059669;
+    --seller-hover: #047857;
+    --seller-light: #ecfdf5;
+    --seller-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+
+    --bg-page: #f8fafc;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+
+    --border: #e2e8f0;
+    --border-focus: #818cf8;
+    --radius-card: 24px;
+    --radius-input: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-page);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ================= PAGE CONTAINER ================= */
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 18px;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(79, 70, 229, 0.12), transparent 32%),
+        radial-gradient(circle at 90% 90%, rgba(16, 185, 129, 0.10), transparent 32%),
+        linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.auth-page::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    top: -200px;
+    right: -150px;
+    border-radius: 50%;
+    background: rgba(79, 70, 229, 0.06);
+    pointer-events: none;
+}
+
+.auth-page::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    bottom: -180px;
+    left: -140px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.06);
+    pointer-events: none;
+}
+
+/* ================= AUTH CARD ================= */
+.auth-card {
+    width: 100%;
+    max-width: 490px;
+    position: relative;
+    z-index: 2;
+    padding: 38px 34px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: var(--radius-card);
+    box-shadow:
+        0 25px 60px -12px rgba(15, 23, 42, 0.12),
+        0 8px 24px -4px rgba(15, 23, 42, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    animation: cardAppear 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ================= BRAND & HEADER ================= */
+.brand {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.brand-logo {
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background: var(--primary-gradient);
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.32);
+    user-select: none;
+}
+
+.seller-logo,
+.seller-login-card .brand-logo {
+    background: var(--seller-gradient);
+    box-shadow: 0 10px 25px rgba(5, 150, 105, 0.32);
+}
+
+.brand h1 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+}
+
+.brand p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-top: 6px;
+    line-height: 1.5;
+}
+
+/* ================= ROLE TOGGLE TABS ================= */
+.role-tabs {
+    display: flex;
+    background: #f1f5f9;
+    padding: 5px;
+    border-radius: var(--radius-input);
+    margin-bottom: 24px;
+    gap: 4px;
+    border: 1px solid var(--border);
+}
+
+.role-tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 9px;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    background: transparent;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.role-tab:hover {
+    color: var(--text-primary);
+}
+
+.role-tab.active {
+    background: #ffffff;
+    color: var(--primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.role-tab.seller-tab.active {
+    color: var(--seller);
+}
+
+/* ================= LOGIN METHOD SWITCHER (Password vs Phone OTP) ================= */
+.login-method-tabs {
+    display: flex;
+    background: #f1f5f9;
+    padding: 4px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    gap: 4px;
+}
+
+.method-tab {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 8px 12px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.method-tab:hover {
+    color: var(--text-primary);
+}
+
+.method-tab.active {
+    background: #ffffff;
+    color: var(--primary);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+.seller-login-card .method-tab.active,
+.seller-theme .method-tab.active {
+    color: var(--seller);
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.section-title p {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+.account-options {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.account-option {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px;
+    border-radius: 16px;
+    border: 1.5px solid var(--border);
+    background: #ffffff;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.22s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.account-option:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.12);
+    background: #faf5ff;
+}
+
+.option-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: var(--primary-light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.seller-icon {
+    background: var(--seller-light);
+    color: var(--seller);
+}
+
+.account-option:hover .seller-icon {
+    background: #d1fae5;
+}
+
+.option-content {
+    flex: 1;
+}
+
+.option-content strong {
+    display: block;
+    font-size: 15.5px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 3px;
+}
+
+.option-content span {
+    display: block;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.option-arrow {
+    font-size: 18px;
+    color: var(--text-muted);
+    font-weight: 700;
+    transition: transform 0.2s ease;
+}
+
+.account-option:hover .option-arrow {
+    transform: translateX(4px);
+    color: var(--primary);
+}
+
+/* ================= FORM STYLES ================= */
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 7px;
+}
+
+.label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 7px;
+}
+
+.label-row label {
+    margin-bottom: 0;
+}
+
+.label-row a {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.label-row a:hover {
+    text-decoration: underline;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-group input,
+.password-box input {
+    width: 100%;
+    height: 50px;
+    padding: 0 16px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-input);
+    font-size: 14.5px;
+    color: var(--text-primary);
+    background: #ffffff;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.input-group input::placeholder,
+.password-box input::placeholder {
+    color: #94a3b8;
+}
+
+.input-group input:hover,
+.password-box input:hover {
+    border-color: #cbd5e1;
+}
+
+.input-group input:focus,
+.password-box input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+.seller-login-card .input-group input:focus,
+.seller-login-card .password-box input:focus {
+    border-color: var(--seller);
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.12);
+}
+
+/* Password eye button */
+.password-box {
+    position: relative;
+    width: 100%;
+}
+
+.password-box input {
+    padding-right: 50px;
+}
+
+.password-box button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #64748b;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.password-box button:hover {
+    background: #f1f5f9;
+    color: var(--text-primary);
+}
+
+/* ================= BUTTONS ================= */
+.primary-btn {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-gradient);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius-input);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+    transition: all 0.2s ease;
+    margin-top: 8px;
+}
+
+.primary-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
+    filter: brightness(1.05);
+}
+
+.seller-btn,
+.seller-login-card .primary-btn {
+    background: var(--seller-gradient);
+    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+}
+
+.seller-btn:hover,
+.seller-login-card .primary-btn:hover {
+    box-shadow: 0 8px 20px rgba(5, 150, 105, 0.4);
+}
+
+.secondary-btn {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    color: var(--primary);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-input);
+    font-size: 14.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.secondary-btn:hover {
+    background: var(--primary-light);
+    border-color: var(--primary);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 22px 0;
+    color: var(--text-muted);
+    font-size: 12.5px;
+    font-weight: 600;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+.divider span {
+    padding: 0 14px;
+}
+
+/* ================= DEMO CREDENTIALS BOX ================= */
+.demo-box {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: var(--radius-input);
+    padding: 14px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.demo-box-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.demo-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.demo-pill-btn {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #334155;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.demo-pill-btn:hover {
+    background: #e2e8f0;
+    border-color: #94a3b8;
+    color: #0f172a;
+}
+
+/* ================= FOOTER LINKS & BACK ================= */
+.signup-text,
+.login-link,
+.create-section {
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-top: 18px;
+}
+
+.signup-text a,
+.login-link a {
+    color: var(--primary);
+    font-weight: 700;
+    margin-left: 4px;
+}
+
+.create-account-button {
+    width: 100%;
+    margin-top: 10px;
+    height: 48px;
+    border: 1.5px solid var(--border);
+    background: #ffffff;
+    border-radius: var(--radius-input);
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.create-account-button:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--primary-light);
+}
+
+.back-button,
+.back-home {
+    width: 100%;
+    margin-top: 16px;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    text-align: center;
+    display: block;
+}
+
+.back-button:hover,
+.back-home:hover {
+    color: var(--text-primary);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 28px 20px;
+        border-radius: 18px;
+    }
+    .demo-buttons {
+        flex-direction: column;
+    }
+}

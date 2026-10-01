@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Signup | AHD Marketplace</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+
+<main class="auth-page">
+    <section class="auth-card signup-card">
+
+        <div class="brand">
+            <a href="home.html" style="text-decoration:none;">
+                <div class="brand-logo seller-logo">AHD</div>
+            </a>
+            <h1>Create Seller Account</h1>
+            <p>Start selling on AHD Marketplace and connect with buyers</p>
+        </div>
+
+        <!-- 1-Click Demo Fill for Testing -->
+        <button type="button" class="demo-fill-btn" onclick="fillSellerDemoData()">
+            ⚡ Fill Sample Seller Data
+        </button>
+
+        <form id="sellerSignupForm" class="signup-form seller-btn-focus" novalidate>
+
+            <!-- NAME -->
+            <div class="input-group">
+                <label for="sellerName">Full Name or Business Name</label>
+                <input
+                    type="text"
+                    id="sellerName"
+                    placeholder="Enter your name or business name (e.g. Aman Electronics)"
+                    required
+                >
+            </div>
+
+            <!-- PHONE & PHONE OTP -->
+            <div class="form-grid-2">
+                <div class="input-group">
+                    <label for="sellerPhone">10-Digit Mobile Number</label>
+                    <div class="input-with-button">
+                        <input
+                            type="tel"
+                            id="sellerPhone"
+                            maxlength="10"
+                            placeholder="e.g. 9123456789"
+                            required
+                        >
+                        <button type="button" class="send-otp-btn seller-btn-style" id="sellerPhoneOtpStatusBtn" onclick="requestOtpForField('sellerPhone', 'sellerPhoneOtp', 'phone', this)">
+                            📲 Send OTP
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="sellerPhoneOtp">Mobile OTP (6-digits)</label>
+                    <input
+                        type="text"
+                        id="sellerPhoneOtp"
+                        class="otp-digit-input"
+                        maxlength="6"
+                        inputmode="numeric"
+                        placeholder="• • • • • •"
+                        required
+                    >
+                </div>
+            </div>
+
+            <!-- EMAIL & EMAIL OTP -->
+            <div class="form-grid-2">
+                <div class="input-group">
+                    <label for="sellerEmail">Email Address</label>
+                    <div class="input-with-button">
+                        <input
+                            type="email"
+                            id="sellerEmail"
+                            placeholder="seller@example.com"
+                            required
+                        >
+                        <button type="button" class="send-otp-btn seller-btn-style" id="sellerEmailOtpStatusBtn" onclick="requestOtpForField('sellerEmail', 'sellerEmailOtp', 'email', this)">
+                            ✉️ Send OTP
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="sellerEmailOtp">Email OTP (6-digits)</label>
+                    <input
+                        type="text"
+                        id="sellerEmailOtp"
+                        class="otp-digit-input"
+                        maxlength="6"
+                        inputmode="numeric"
+                        placeholder="• • • • • •"
+                        required
+                    >
+                </div>
+            </div>
+
+            <!-- PASSWORDS -->
+            <div class="form-grid-2">
+                <div class="input-group">
+                    <label for="sellerPassword">Password</label>
+                    <div class="password-box">
+                        <input
+                            type="password"
+                            id="sellerPassword"
+                            minlength="6"
+                            placeholder="Min 6 characters"
+                            oninput="checkPasswordStrength(this.value)"
+                            required
+                        >
+                        <button type="button" onclick="togglePass('sellerPassword', this)">👁️</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="sellerConfirmPassword">Confirm Password</label>
+                    <div class="password-box">
+                        <input
+                            type="password"
+                            id="sellerConfirmPassword"
+                            placeholder="Re-enter password"
+                            required
+                        >
+                        <button type="button" onclick="togglePass('sellerConfirmPassword', this)">👁️</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PASSWORD STRENGTH METER -->
+            <div class="password-strength">
+                <div class="strength-bar-track">
+                    <div class="strength-bar-fill" id="strengthBarFill"></div>
+                </div>
+                <span class="strength-text" id="strengthLabel">Enter password</span>
+            </div>
+
+            <div class="message" id="signupMessage" role="alert"></div>
+
+            <button type="submit" class="primary-btn seller-btn" id="signupSubmitBtn">
+                Create Seller Account
+            </button>
+
+        </form>
+
+        <div class="login-link">
+            Already have an account?
+            <a href="seller-login.html">Login</a>
+        </div>
+
+        <button
+            type="button"
+            class="back-button"
+            onclick="window.location.href='signup.html'"
+        >
+            ← Back to Account Types
+        </button>
+
+    </section>
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/signup.js"></script>
+
+</body>
+</html>

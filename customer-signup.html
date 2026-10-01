@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Signup | AHD Marketplace</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+
+<main class="auth-page">
+    <section class="auth-card signup-card">
+
+        <div class="brand">
+            <a href="home.html" style="text-decoration:none;">
+                <div class="brand-logo">AHD</div>
+            </a>
+            <h1>Create Customer Account</h1>
+            <p>Join AHD Marketplace to buy items, request deals and contact sellers</p>
+        </div>
+
+        <!-- 1-Click Demo Fill for Testing -->
+        <button type="button" class="demo-fill-btn" onclick="fillCustomerDemoData()">
+            ⚡ Fill Sample Customer Data
+        </button>
+
+        <form id="customerSignupForm" class="signup-form" novalidate>
+
+            <!-- NAME -->
+            <div class="input-group">
+                <label for="customerName">Full Name</label>
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter your full name (e.g. Rahul Sharma)"
+                    required
+                >
+            </div>
+
+            <!-- PHONE & PHONE OTP -->
+            <div class="form-grid-2">
+                <div class="input-group">
+                    <label for="customerPhone">10-Digit Mobile Number</label>
+                    <div class="input-with-button">
+                        <input
+                            type="tel"
+                            id="customerPhone"
+                            maxlength="10"
+                            placeholder="e.g. 9876543210"
+                            required
+                        >
+                        <button type="button" class="send-otp-btn" id="phoneOtpStatusBtn" onclick="requestOtpForField('customerPhone', 'customerPhoneOtp', 'phone', this)">
+                            📲 Send OTP
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="customerPhoneOtp">Mobile OTP (6-digits)</label>
+                    <input
+                        type="text"
+                        id="customerPhoneOtp"
+                        class="otp-digit-input"
+                        maxlength="6"
+                        inputmode="numeric"
+                        placeholder="• • • • • •"
+                        required
+                    >
+                </div>
+            </div>
+
+            <!-- EMAIL & EMAIL OTP -->
+            <div class="form-grid-2">
+                <div class="input-group">
+                    <label for="customerEmail">Email Address</label>
+                    <div class="input-with-button">
+                        <input
+                            type="email"
+                            id="customerEmail"
+                            placeholder="you@example.com"
+                            required
+                        >
+                        <button type="button" class="send-otp-btn" id="emailOtpStatusBtn" onclick="requestOtpForField('customerEmail', 'customerEmailOtp', 'email', this)">
+                            ✉️ Send OTP
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="customerEmailOtp">Email OTP (6-digits)</label>
+                    <input
+                        type="text"
+                        id="customerEmailOtp"
+                        class="otp-digit-input"
+                        maxlength="6"
+                        inputmode="numeric"
+                        placeholder="• • • • • •"
+                        required
+                    >
+                </div>
+            </div>
+
+            <!-- PASSWORDS -->
+            <div class="form-grid-2">
+                <div class="input-group">
+                    <label for="customerPassword">Password</label>
+                    <div class="password-box">
+                        <input
+                            type="password"
+                            id="customerPassword"
+                            minlength="6"
+                            placeholder="Min 6 characters"
+                            oninput="checkPasswordStrength(this.value)"
+                            required
+                        >
+                        <button type="button" onclick="togglePass('customerPassword', this)">👁️</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="customerConfirmPassword">Confirm Password</label>
+                    <div class="password-box">
+                        <input
+                            type="password"
+                            id="customerConfirmPassword"
+                            placeholder="Re-enter password"
+                            required
+                        >
+                        <button type="button" onclick="togglePass('customerConfirmPassword', this)">👁️</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PASSWORD STRENGTH METER -->
+            <div class="password-strength">
+                <div class="strength-bar-track">
+                    <div class="strength-bar-fill" id="strengthBarFill"></div>
+                </div>
+                <span class="strength-text" id="strengthLabel">Enter password</span>
+            </div>
+
+            <div class="message" id="signupMessage" role="alert"></div>
+
+            <button type="submit" class="primary-btn" id="signupSubmitBtn">
+                Create Customer Account
+            </button>
+
+        </form>
+
+        <div class="login-link">
+            Already have an account?
+            <a href="customer-login.html">Login</a>
+        </div>
+
+        <button
+            type="button"
+            class="back-button"
+            onclick="window.location.href='signup.html'"
+        >
+            ← Back to Account Types
+        </button>
+
+    </section>
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/signup.js"></script>
+
+</body>
+</html>

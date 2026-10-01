@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AHD Marketplace | Buy • Sell • Request • Match • Deal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .splash-pills {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0 28px;
+        }
+        .splash-pill {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            font-size: 13px;
+            font-weight: 600;
+            color: #e2e8f0;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= SPLASH SCREEN ================= -->
+    <section class="splash-screen">
+        <div class="splash-content">
+
+            <div class="ahd-logo">AHD</div>
+
+            <h1>AHD Marketplace</h1>
+            <p>Buy anything, sell anything — right in your local neighborhood</p>
+
+            <div class="splash-pills">
+                <span class="splash-pill">🛍️ Hyperlocal Marketplace</span>
+                <span class="splash-pill">🔄 Request & Match Engine</span>
+                <span class="splash-pill">🛠️ Verified Local Services</span>
+                <span class="splash-pill">🤝 Direct Safe Deals</span>
+            </div>
+
+            <div class="splash-actions">
+                <a href="home.html" class="primary-btn" style="padding: 14px 30px; font-size: 16px;">
+                    🚀 Enter Marketplace
+                </a>
+                <a href="login.html" class="secondary-btn" style="background: rgba(255,255,255,0.12); color:#ffffff; border-color:rgba(255,255,255,0.3); padding: 14px 26px;">
+                    👤 Login
+                </a>
+            </div>
+
+            <div class="splash-links">
+                <a href="customer-signup.html">Join as Customer</a>
+                <span>•</span>
+                <a href="seller-signup.html">Register as Seller</a>
+                <span>•</span>
+                <a href="services.html">Explore Services</a>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

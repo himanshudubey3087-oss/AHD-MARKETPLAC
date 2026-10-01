@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AHD - Notifications</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/notifications.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="main-header">
+    <div class="header-container">
+        <!-- LOGO -->
+        <a href="home.html" class="logo">
+            AHD <span>Marketplace</span>
+        </a>
+
+        <!-- LOCATION -->
+        <div class="location-box" onclick="if(window.AHDLocation) window.AHDLocation.promptChangeLocation()" title="Click to change location">
+            <span class="live-dot"></span>
+            <span>📍</span>
+            <span id="userLocation" data-location>Detecting location...</span>
+        </div>
+
+        <!-- SEARCH -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="notifSearchInput"
+                placeholder="Search products, services, jobs..."
+                onkeydown="if(event.key==='Enter') window.location.href='search.html?q='+encodeURIComponent(this.value)"
+            >
+            <button class="search-btn" onclick="const q=document.getElementById('notifSearchInput').value; window.location.href='search.html?q='+encodeURIComponent(q)">
+                🔍
+            </button>
+        </div>
+
+        <!-- NAVIGATION -->
+        <nav class="main-nav">
+            <a href="home.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="sell.html" class="sell-nav-btn">+ Sell</a>
+            <a href="notifications.html" class="active nav-icon-link" title="Notifications">
+                🔔 <span id="headerNotificationCount" class="header-notification-count">0</span>
+            </a>
+            <a href="messages.html">Messages</a>
+            <a href="account.html" class="auth-nav-btn">Account</a>
+        </nav>
+    </div>
+</header>
+
+
+
+<main class="notifications-container">
+
+
+    <!-- PAGE HEADING -->
+
+    <section class="notification-heading">
+
+        <div>
+
+            <span class="heading-badge">
+                AHD NOTIFICATIONS
+            </span>
+
+            <h1>
+                Notifications
+            </h1>
+
+            <p>
+                AHD पर आपके requests, matches,
+                messages और deals से जुड़ी सभी updates यहाँ मिलेंगी।
+            </p>
+
+        </div>
+
+
+        <button
+            id="markAllReadButton"
+            class="mark-all-btn"
+        >
+            ✓ Mark all as read
+        </button>
+
+    </section>
+
+
+
+    <!-- FILTERS -->
+
+    <section class="notification-toolbar">
+
+
+        <div class="notification-tabs">
+
+            <button
+                class="notification-tab active"
+                data-filter="all"
+            >
+                All
+            </button>
+
+            <button
+                class="notification-tab"
+                data-filter="unread"
+            >
+                Unread
+            </button>
+
+            <button
+                class="notification-tab"
+                data-filter="message"
+            >
+                Messages
+            </button>
+
+            <button
+                class="notification-tab"
+                data-filter="match"
+            >
+                Matches
+            </button>
+
+            <button
+                class="notification-tab"
+                data-filter="deal"
+            >
+                Deals
+            </button>
+
+        </div>
+
+
+        <div class="notification-summary">
+
+            <span>
+                Unread:
+            </span>
+
+            <strong id="unreadCount">
+                0
+            </strong>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- NOTIFICATION LIST -->
+
+    <section
+        id="notificationList"
+        class="notification-list"
+    >
+
+        <!-- Notifications inserted by JS -->
+
+    </section>
+
+
+
+    <!-- EMPTY STATE -->
+
+    <section
+        id="emptyNotifications"
+        class="empty-notifications hidden"
+    >
+
+        <div class="empty-notification-icon">
+            🔔
+        </div>
+
+        <h2>
+            No notifications
+        </h2>
+
+        <p>
+            इस category में अभी कोई notification नहीं है।
+        </p>
+
+    </section>
+
+
+</main>
+
+
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/location.js"></script>
+<script src="js/notifications.js"></script>
+
+
+</body>
+
+</html>

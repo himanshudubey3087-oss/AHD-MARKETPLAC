@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sell Product | AHD Marketplace</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sell.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="sell-header">
+
+    <div class="sell-header-left">
+
+        <a href="home.html" class="ahd-logo">
+            AHD
+        </a>
+
+        <div class="sell-title">
+            <h1>Sell Your Product</h1>
+            <p>List your product on AHD Marketplace</p>
+        </div>
+
+    </div>
+
+    <a href="home.html" class="back-home-btn">
+        ← Back to Home
+    </a>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="sell-container">
+
+    <form id="sellProductForm" class="sell-form">
+
+        <!-- ================= IMAGES ================= -->
+
+        <section class="sell-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Product Images</h2>
+                    <p>Add up to 8 clear images of your product</p>
+                </div>
+
+                <span class="required-text">Required</span>
+
+            </div>
+
+
+            <div class="image-upload-area">
+
+                <label for="productImages" class="upload-box">
+
+                    <div class="upload-icon">
+                        📷
+                    </div>
+
+                    <h3>Add Product Photos</h3>
+
+                    <p>
+                        Click to upload images
+                    </p>
+
+                    <span>
+                        JPG, JPEG, PNG • Maximum 8 images
+                    </span>
+
+                </label>
+
+                <input
+                    type="file"
+                    id="productImages"
+                    accept="image/jpeg,image/png,image/jpg"
+                    multiple
+                    hidden
+                >
+
+            </div>
+
+
+            <!-- IMAGE PREVIEW -->
+
+            <div id="imagePreview" class="image-preview"></div>
+
+            <div class="image-counter">
+                <span id="imageCount">0</span>/8 images selected
+            </div>
+
+        </section>
+
+
+        <!-- ================= BASIC INFORMATION ================= -->
+
+        <section class="sell-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Basic Information</h2>
+                    <p>Tell buyers about your product</p>
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT NAME -->
+
+            <div class="form-group">
+
+                <label for="productName">
+                    Product Name
+                    <span>*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="productName"
+                    name="productName"
+                    placeholder="Example: iPhone 15 Pro Max"
+                    maxlength="100"
+                    required
+                >
+
+                <small>
+                    Give your product a clear and attractive name
+                </small>
+
+            </div>
+
+
+            <!-- CATEGORY + CONDITION -->
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="productCategory">
+                        Category
+                        <span>*</span>
+                    </label>
+
+                    <select id="productCategory" required>
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <option value="Mobiles">
+                            Mobiles
+                        </option>
+
+                        <option value="Laptops">
+                            Laptops
+                        </option>
+
+                        <option value="Electronics">
+                            Electronics
+                        </option>
+
+                        <option value="Vehicles">
+                            Vehicles
+                        </option>
+
+                        <option value="Furniture">
+                            Furniture
+                        </option>
+
+                        <option value="Books">
+                            Books
+                        </option>
+
+                        <option value="Fashion">
+                            Fashion
+                        </option>
+
+                        <option value="Home & Kitchen">
+                            Home & Kitchen
+                        </option>
+
+                        <option value="Sports">
+                            Sports
+                        </option>
+
+                        <option value="Agriculture">
+                            Agriculture
+                        </option>
+
+                        <option value="Jobs">
+                            Jobs
+                        </option>
+
+                        <option value="Services">
+                            Services
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="productCondition">
+                        Condition
+                        <span>*</span>
+                    </label>
+
+                    <select id="productCondition" required>
+
+                        <option value="">
+                            Select Condition
+                        </option>
+
+                        <option value="New">
+                            New
+                        </option>
+
+                        <option value="Like New">
+                            Like New
+                        </option>
+
+                        <option value="Good">
+                            Good
+                        </option>
+
+                        <option value="Fair">
+                            Fair
+                        </option>
+
+                        <option value="Used">
+                            Used
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRICE -->
+
+            <div class="form-group price-group">
+
+                <label for="productPrice">
+                    Selling Price
+                    <span>*</span>
+                </label>
+
+                <div class="price-input">
+
+                    <span>₹</span>
+
+                    <input
+                        type="number"
+                        id="productPrice"
+                        name="productPrice"
+                        placeholder="Enter price"
+                        min="1"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+                <small>
+                    Enter the price you expect from the buyer
+                </small>
+
+            </div>
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="form-group">
+
+                <label for="productDescription">
+                    Product Description
+                    <span>*</span>
+                </label>
+
+                <textarea
+                    id="productDescription"
+                    name="productDescription"
+                    rows="6"
+                    maxlength="1000"
+                    placeholder="Describe your product, features, age, reason for selling, included accessories, etc."
+                    required
+                ></textarea>
+
+                <div class="textarea-footer">
+
+                    <small>
+                        Be honest and provide complete information.
+                    </small>
+
+                    <span>
+                        <span id="descriptionCount">0</span>/1000
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LOCATION ================= -->
+
+        <section class="sell-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Product Location</h2>
+                    <p>Help nearby buyers find your product</p>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="productLocation">
+                    Location
+                    <span>*</span>
+                </label>
+
+                <div class="location-input">
+
+                    <span>📍</span>
+
+                    <input
+                        type="text"
+                        id="productLocation"
+                        placeholder="Example: Agra, Uttar Pradesh"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        id="detectLocationBtn"
+                        class="detect-location-btn"
+                    >
+                        Detect
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DELIVERY ================= -->
+
+        <section class="sell-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Delivery & Contact</h2>
+                    <p>Choose how buyers can contact you</p>
+                </div>
+
+            </div>
+
+
+            <!-- DELIVERY -->
+
+            <div class="form-group">
+
+                <label>
+                    Delivery Option
+                    <span>*</span>
+                </label>
+
+                <div class="radio-grid">
+
+                    <label class="radio-card">
+
+                        <input
+                            type="radio"
+                            name="delivery"
+                            value="Meet in Person"
+                            required
+                        >
+
+                        <span>
+                            🤝
+                            <strong>Meet in Person</strong>
+                            <small>Buyer and seller meet</small>
+                        </span>
+
+                    </label>
+
+
+                    <label class="radio-card">
+
+                        <input
+                            type="radio"
+                            name="delivery"
+                            value="Local Delivery"
+                        >
+
+                        <span>
+                            🚚
+                            <strong>Local Delivery</strong>
+                            <small>Seller delivers nearby</small>
+                        </span>
+
+                    </label>
+
+
+                    <label class="radio-card">
+
+                        <input
+                            type="radio"
+                            name="delivery"
+                            value="Shipping"
+                        >
+
+                        <span>
+                            📦
+                            <strong>Shipping</strong>
+                            <small>Product can be shipped</small>
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div class="form-group">
+
+                <label>
+                    Preferred Contact
+                    <span>*</span>
+                </label>
+
+                <div class="contact-options">
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="contact"
+                            value="Message"
+                            checked
+                        >
+                        💬 Message
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="contact"
+                            value="Call"
+                        >
+                        📞 Call
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SELLER INFO ================= -->
+
+        <section class="sell-card seller-info-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Seller Information</h2>
+                    <p>Your basic seller information</p>
+                </div>
+
+            </div>
+
+
+            <div class="seller-preview">
+
+                <div class="seller-avatar">
+                    👤
+                </div>
+
+                <div>
+
+                    <strong id="sellerName">
+                        Seller
+                    </strong>
+
+                    <p>
+                        Your account information will be used here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MESSAGE ================= -->
+
+        <div id="sellMessage" class="sell-message"></div>
+
+
+        <!-- ================= SUBMIT ================= -->
+
+        <section class="submit-section">
+
+            <button
+                type="submit"
+                id="publishProductBtn"
+                class="publish-btn"
+            >
+                🚀 Publish Product
+            </button>
+
+            <p>
+                By publishing, you confirm that the product information
+                provided by you is accurate.
+            </p>
+
+        </section>
+
+    </form>
+
+</main>
+
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/location.js"></script>
+<script src="js/sell.js"></script>
+
+</body>
+</html>

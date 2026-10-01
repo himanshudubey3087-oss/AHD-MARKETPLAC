@@ -1,0 +1,162 @@
+[
+  {
+    "dealId": "DEAL-TEST-1790852113343",
+    "productId": "P942952",
+    "productName": "iPhone 14 Pro 256GB Gold 112851",
+    "productPrice": 65000,
+    "agreedPrice": 61500,
+    "customerId": "USR-1790852112916-570",
+    "customerName": "Test Customer 112851",
+    "customerEmail": "test_customer_112851@ahd.in",
+    "customerPhone": "9892553598",
+    "sellerId": "USR-1790852113181-923",
+    "sellerName": "Amit Gupta 112851",
+    "sellerEmail": "test_seller_112851@ahd.in",
+    "sellerPhone": "9126299264",
+    "status": "Accepted",
+    "messagesJson": "[]",
+    "createdAt": "2026-10-01T10:55:13.339Z",
+    "updatedAt": "2026-10-01T10:55:13.350Z",
+    "customer": {
+      "id": "USR-1790852112916-570",
+      "name": "Test Customer 112851",
+      "email": "test_customer_112851@ahd.in",
+      "phone": "9892553598"
+    },
+    "seller": {
+      "id": "USR-1790852113181-923",
+      "name": "Amit Gupta 112851",
+      "email": "test_seller_112851@ahd.in",
+      "phone": "9126299264"
+    },
+    "messages": []
+  },
+  {
+    "dealId": "DEAL-TEST-1790850829094",
+    "productId": "P149120",
+    "productName": "iPhone 14 Pro 256GB Gold 828647",
+    "productPrice": 65000,
+    "agreedPrice": 61500,
+    "customerId": "USR-1790850828703-667",
+    "customerName": "Test Customer 828647",
+    "customerEmail": "test_customer_828647@ahd.in",
+    "customerPhone": "9858827344",
+    "sellerId": "USR-1790850828954-312",
+    "sellerName": "Amit Gupta 828647",
+    "sellerEmail": "test_seller_828647@ahd.in",
+    "sellerPhone": "9174466835",
+    "status": "Accepted",
+    "messagesJson": "[]",
+    "createdAt": "2026-10-01T10:33:49.092Z",
+    "updatedAt": "2026-10-01T10:33:49.100Z",
+    "customer": {
+      "id": "USR-1790850828703-667",
+      "name": "Test Customer 828647",
+      "email": "test_customer_828647@ahd.in",
+      "phone": "9858827344"
+    },
+    "seller": {
+      "id": "USR-1790850828954-312",
+      "name": "Amit Gupta 828647",
+      "email": "test_seller_828647@ahd.in",
+      "phone": "9174466835"
+    },
+    "messages": []
+  },
+  {
+    "dealId": "DEAL-TEST-1790848869776",
+    "productId": "P292409",
+    "productName": "iPhone 14 Pro 256GB Gold 869312",
+    "productPrice": 65000,
+    "agreedPrice": 61500,
+    "customerId": "USR-1790848869364-906",
+    "customerName": "Test Customer 869312",
+    "customerEmail": "test_customer_869312@ahd.in",
+    "customerPhone": "9849589874",
+    "sellerId": "USR-1790848869603-402",
+    "sellerName": "Amit Gupta 869312",
+    "sellerEmail": "test_seller_869312@ahd.in",
+    "sellerPhone": "9126159553",
+    "status": "Accepted",
+    "messagesJson": "[]",
+    "createdAt": "2026-10-01T10:01:09.775Z",
+    "updatedAt": "2026-10-01T10:01:09.784Z",
+    "customer": {
+      "id": "USR-1790848869364-906",
+      "name": "Test Customer 869312",
+      "email": "test_customer_869312@ahd.in",
+      "phone": "9849589874"
+    },
+    "seller": {
+      "id": "USR-1790848869603-402",
+      "name": "Amit Gupta 869312",
+      "email": "test_seller_869312@ahd.in",
+      "phone": "9126159553"
+    },
+    "messages": []
+  },
+  {
+    "dealId": "DEAL-TEST-1790848848707",
+    "productId": "P242574",
+    "productName": "iPhone 14 Pro 256GB Gold 848246",
+    "productPrice": 65000,
+    "agreedPrice": 61500,
+    "customerId": "USR-1790848848318-29",
+    "customerName": "Test Customer 848246",
+    "customerEmail": "test_customer_848246@ahd.in",
+    "customerPhone": "9858394986",
+    "sellerId": "USR-1790848848556-808",
+    "sellerName": "Amit Gupta 848246",
+    "sellerEmail": "test_seller_848246@ahd.in",
+    "sellerPhone": "9186742456",
+    "status": "Accepted",
+    "messagesJson": "[]",
+    "createdAt": "2026-10-01T10:00:48.707Z",
+    "updatedAt": "2026-10-01T10:00:48.715Z",
+    "customer": {
+      "id": "USR-1790848848318-29",
+      "name": "Test Customer 848246",
+      "email": "test_customer_848246@ahd.in",
+      "phone": "9858394986"
+    },
+    "seller": {
+      "id": "USR-1790848848556-808",
+      "name": "Amit Gupta 848246",
+      "email": "test_seller_848246@ahd.in",
+      "phone": "9186742456"
+    },
+    "messages": []
+  },
+  {
+    "dealId": "DEAL-TEST-1790708095038",
+    "productId": "P315079",
+    "productName": "OnePlus 11R 5G 128GB",
+    "productPrice": 28000,
+    "agreedPrice": 26500,
+    "customerId": "USR-1790708094744-851",
+    "customerName": "Pooja Verma",
+    "customerEmail": "buyer_1790708094679@ahd.in",
+    "customerPhone": "9882949081",
+    "sellerId": "USR-1790708094881-445",
+    "sellerName": "Sunil Sharma",
+    "sellerEmail": "seller_1790708094812@ahd.in",
+    "sellerPhone": "9155114261",
+    "status": "Accepted",
+    "messagesJson": "[]",
+    "createdAt": "2026-09-29T18:54:55.040Z",
+    "updatedAt": "2026-09-29T18:54:55.039Z",
+    "customer": {
+      "id": "USR-1790708094744-851",
+      "name": "Pooja Verma",
+      "email": "buyer_1790708094679@ahd.in",
+      "phone": "9882949081"
+    },
+    "seller": {
+      "id": "USR-1790708094881-445",
+      "name": "Sunil Sharma",
+      "email": "seller_1790708094812@ahd.in",
+      "phone": "9155114261"
+    },
+    "messages": []
+  }
+]

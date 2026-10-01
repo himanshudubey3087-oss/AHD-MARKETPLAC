@@ -1,0 +1,289 @@
+[
+  {
+    "id": "P942952",
+    "name": "iPhone 14 Pro 256GB Gold 112851",
+    "price": 65000,
+    "originalPrice": 129900,
+    "category": "Mobiles",
+    "condition": "Flawless",
+    "location": "Agra, Uttar Pradesh",
+    "description": "Mint condition iPhone with complete box and bill.",
+    "imagesJson": "[]",
+    "sellerId": "USR-1790852113181-923",
+    "sellerName": "Amit Gupta 112851",
+    "sellerPhone": "9126299264",
+    "sellerEmail": "test_seller_112851@ahd.in",
+    "rating": 4.8,
+    "status": "active",
+    "createdAt": "2026-10-01T10:55:13.305Z",
+    "updatedAt": "2026-10-01T10:55:13.320Z",
+    "images": [],
+    "seller": {
+      "name": "Amit Gupta 112851",
+      "phone": "9126299264",
+      "email": "test_seller_112851@ahd.in"
+    }
+  },
+  {
+    "id": "P149120",
+    "name": "iPhone 14 Pro 256GB Gold 828647",
+    "price": 65000,
+    "originalPrice": 129900,
+    "category": "Mobiles",
+    "condition": "Flawless",
+    "location": "Agra, Uttar Pradesh",
+    "description": "Mint condition iPhone with complete box and bill.",
+    "imagesJson": "[]",
+    "sellerId": "USR-1790850828954-312",
+    "sellerName": "Amit Gupta 828647",
+    "sellerPhone": "9174466835",
+    "sellerEmail": "test_seller_828647@ahd.in",
+    "rating": 4.8,
+    "status": "active",
+    "createdAt": "2026-10-01T10:33:49.068Z",
+    "updatedAt": "2026-10-01T10:33:49.078Z",
+    "images": [],
+    "seller": {
+      "name": "Amit Gupta 828647",
+      "phone": "9174466835",
+      "email": "test_seller_828647@ahd.in"
+    }
+  },
+  {
+    "id": "P292409",
+    "name": "iPhone 14 Pro 256GB Gold 869312",
+    "price": 65000,
+    "originalPrice": 129900,
+    "category": "Mobiles",
+    "condition": "Flawless",
+    "location": "Agra, Uttar Pradesh",
+    "description": "Mint condition iPhone with complete box and bill.",
+    "imagesJson": "[]",
+    "sellerId": "USR-1790848869603-402",
+    "sellerName": "Amit Gupta 869312",
+    "sellerPhone": "9126159553",
+    "sellerEmail": "test_seller_869312@ahd.in",
+    "rating": 4.8,
+    "status": "active",
+    "createdAt": "2026-10-01T10:01:09.742Z",
+    "updatedAt": "2026-10-01T10:01:09.754Z",
+    "images": [],
+    "seller": {
+      "name": "Amit Gupta 869312",
+      "phone": "9126159553",
+      "email": "test_seller_869312@ahd.in"
+    }
+  },
+  {
+    "id": "P242574",
+    "name": "iPhone 14 Pro 256GB Gold 848246",
+    "price": 65000,
+    "originalPrice": 129900,
+    "category": "Mobiles",
+    "condition": "Flawless",
+    "location": "Agra, Uttar Pradesh",
+    "description": "Mint condition iPhone with complete box and bill.",
+    "imagesJson": "[]",
+    "sellerId": "USR-1790848848556-808",
+    "sellerName": "Amit Gupta 848246",
+    "sellerPhone": "9186742456",
+    "sellerEmail": "test_seller_848246@ahd.in",
+    "rating": 4.8,
+    "status": "active",
+    "createdAt": "2026-10-01T10:00:48.675Z",
+    "updatedAt": "2026-10-01T10:00:48.688Z",
+    "images": [],
+    "seller": {
+      "name": "Amit Gupta 848246",
+      "phone": "9186742456",
+      "email": "test_seller_848246@ahd.in"
+    }
+  },
+  {
+    "id": "P315079",
+    "name": "OnePlus 11R 5G 128GB",
+    "price": 28000,
+    "originalPrice": 39999,
+    "category": "Mobiles",
+    "condition": "Like New",
+    "location": "Agra, Uttar Pradesh",
+    "description": "Flawless OnePlus 11R with 100W SUPERVOOC fast charger and bill.",
+    "imagesJson": "[]",
+    "sellerId": "USR-1790708094881-445",
+    "sellerName": "Sunil Sharma",
+    "sellerPhone": "9155114261",
+    "sellerEmail": "seller_1790708094812@ahd.in",
+    "rating": 4.8,
+    "status": "active",
+    "createdAt": "2026-09-29T18:54:55.030Z",
+    "updatedAt": null,
+    "images": [],
+    "seller": {
+      "name": "Sunil Sharma",
+      "phone": "9155114261",
+      "email": "seller_1790708094812@ahd.in"
+    }
+  },
+  {
+    "id": "P005",
+    "name": "Solid Wooden Study Table & Chair",
+    "price": 4500,
+    "originalPrice": 8500,
+    "category": "Furniture",
+    "condition": "Good",
+    "location": "Agra, Uttar Pradesh",
+    "description": "Sturdy Sheesham wood study desk with 2 storage drawers and ergonomic chair. Selling due to relocation.",
+    "imagesJson": "[\"https://images.unsplash.com/photo-1518455027359-f3f8164ba6b7?auto=format&fit=crop&w=1000&q=80\"]",
+    "sellerId": "USR-DEMO-CUSTOMER",
+    "sellerName": "Rahul Sharma",
+    "sellerPhone": "9876543210",
+    "sellerEmail": "customer@ahd.in",
+    "rating": 4.4,
+    "status": "active",
+    "createdAt": "2026-09-29T18:46:38.669Z",
+    "updatedAt": null,
+    "images": [
+      "https://images.unsplash.com/photo-1518455027359-f3f8164ba6b7?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "seller": {
+      "name": "Rahul Sharma",
+      "phone": "9876543210",
+      "email": "customer@ahd.in"
+    }
+  },
+  {
+    "id": "P006",
+    "name": "Royal Enfield Classic 350 Gunmetal",
+    "price": 145000,
+    "originalPrice": 210000,
+    "category": "Vehicles",
+    "condition": "Good",
+    "location": "Agra, Uttar Pradesh",
+    "description": "Classic 350 Gunmetal Grey, single owner, comprehensive insurance, regular authorized service.",
+    "imagesJson": "[\"https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1000&q=80\"]",
+    "sellerId": "USR-DEMO-CUSTOMER",
+    "sellerName": "Rahul Sharma",
+    "sellerPhone": "9876543210",
+    "sellerEmail": "customer@ahd.in",
+    "rating": 4.9,
+    "status": "active",
+    "createdAt": "2026-09-29T18:46:38.669Z",
+    "updatedAt": null,
+    "images": [
+      "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "seller": {
+      "name": "Rahul Sharma",
+      "phone": "9876543210",
+      "email": "customer@ahd.in"
+    }
+  },
+  {
+    "id": "P004",
+    "name": "HP Victus Gaming Laptop",
+    "price": 54000,
+    "originalPrice": 76000,
+    "category": "Electronics",
+    "condition": "Like New",
+    "location": "Mathura, Uttar Pradesh",
+    "description": "Ryzen 5 5600H, GTX 1650, 144Hz IPS display, 16GB RAM. Mint condition with original box.",
+    "imagesJson": "[\"https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=1000&q=80\"]",
+    "sellerId": "USR-DEMO-SELLER",
+    "sellerName": "Aman Gupta",
+    "sellerPhone": "9123456789",
+    "sellerEmail": "seller@ahd.in",
+    "rating": 4.8,
+    "status": "active",
+    "createdAt": "2026-09-29T18:46:38.668Z",
+    "updatedAt": null,
+    "images": [
+      "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "seller": {
+      "name": "Aman Gupta",
+      "phone": "9123456789",
+      "email": "seller@ahd.in"
+    }
+  },
+  {
+    "id": "P002",
+    "name": "iPhone 13 128GB Blue",
+    "price": 38000,
+    "originalPrice": 69900,
+    "category": "Mobiles",
+    "condition": "Good",
+    "location": "Agra, Uttar Pradesh",
+    "description": "iPhone 13 128GB blue color. Battery health 87%. Display and camera in flawless condition with original cable.",
+    "imagesJson": "[\"https://images.unsplash.com/photo-1592286927505-2fd4b5e8c2e7?auto=format&fit=crop&w=1000&q=80\"]",
+    "sellerId": "USR-DEMO-SELLER",
+    "sellerName": "Aman Gupta",
+    "sellerPhone": "9123456789",
+    "sellerEmail": "seller@ahd.in",
+    "rating": 4.6,
+    "status": "active",
+    "createdAt": "2026-09-29T18:46:38.667Z",
+    "updatedAt": null,
+    "images": [
+      "https://images.unsplash.com/photo-1592286927505-2fd4b5e8c2e7?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "seller": {
+      "name": "Aman Gupta",
+      "phone": "9123456789",
+      "email": "seller@ahd.in"
+    }
+  },
+  {
+    "id": "P003",
+    "name": "Dell Inspiron 15 Core i5 Laptop",
+    "price": 35000,
+    "originalPrice": 58000,
+    "category": "Electronics",
+    "condition": "Good",
+    "location": "Agra, Uttar Pradesh",
+    "description": "11th Gen Core i5, 16GB RAM, 512GB SSD. Perfect for coding, office work, and daily browsing.",
+    "imagesJson": "[\"https://images.unsplash.com/photo-1593642532744-d377ab507dc8?auto=format&fit=crop&w=1000&q=80\"]",
+    "sellerId": "USR-DEMO-SELLER",
+    "sellerName": "Aman Gupta",
+    "sellerPhone": "9123456789",
+    "sellerEmail": "seller@ahd.in",
+    "rating": 4.5,
+    "status": "active",
+    "createdAt": "2026-09-29T18:46:38.667Z",
+    "updatedAt": null,
+    "images": [
+      "https://images.unsplash.com/photo-1593642532744-d377ab507dc8?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "seller": {
+      "name": "Aman Gupta",
+      "phone": "9123456789",
+      "email": "seller@ahd.in"
+    }
+  },
+  {
+    "id": "P001",
+    "name": "Samsung Galaxy S23 256GB",
+    "price": 42000,
+    "originalPrice": 74999,
+    "category": "Mobiles",
+    "condition": "Like New",
+    "location": "Agra, Uttar Pradesh",
+    "description": "Samsung Galaxy S23 with Snapdragon 8 Gen 2. Like-new condition with bill, box, and charger. No scratches.",
+    "imagesJson": "[\"https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=1000&q=80\"]",
+    "sellerId": "USR-DEMO-SELLER",
+    "sellerName": "Aman Gupta",
+    "sellerPhone": "9123456789",
+    "sellerEmail": "seller@ahd.in",
+    "rating": 4.7,
+    "status": "active",
+    "createdAt": "2026-09-29T18:46:38.666Z",
+    "updatedAt": null,
+    "images": [
+      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "seller": {
+      "name": "Aman Gupta",
+      "phone": "9123456789",
+      "email": "seller@ahd.in"
+    }
+  }
+]

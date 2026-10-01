@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Filter Products | AHD Marketplace</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/filter.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="ahd-header">
+
+        <div class="header-left">
+
+            <a href="index.html" class="logo">
+                AHD
+            </a>
+
+            <button class="location-btn" id="locationBtn">
+                📍 <span id="locationText">Select Location</span>
+            </button>
+
+        </div>
+
+        <div class="header-search">
+
+            <input
+                type="text"
+                id="headerSearch"
+                placeholder="Search products..."
+            >
+
+            <button id="headerSearchBtn">
+                🔍
+            </button>
+
+        </div>
+
+        <div class="header-right">
+
+            <a href="sell.html" class="sell-btn">
+                + Sell
+            </a>
+
+            <a href="account.html" class="account-link">
+                👤 Account
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav class="category-nav">
+
+        <a href="home.html">Home</a>
+
+        <a href="category.html?category=Mobiles">
+            Mobiles
+        </a>
+
+        <a href="category.html?category=Electronics">
+            Electronics
+        </a>
+
+        <a href="category.html?category=Vehicles">
+            Vehicles
+        </a>
+
+        <a href="category.html?category=Property">
+            Property
+        </a>
+
+        <a href="category.html?category=Jobs">
+            Jobs
+        </a>
+
+        <a href="category.html?category=Furniture">
+            Furniture
+        </a>
+
+        <a href="category.html?category=Fashion">
+            Fashion
+        </a>
+
+        <a href="category.html?category=Services">
+            Services
+        </a>
+
+    </nav>
+
+
+    <!-- ================= PAGE ================= -->
+
+    <main class="filter-page">
+
+        <div class="filter-page-header">
+
+            <div>
+
+                <span class="page-label">
+                    AHD MARKETPLACE
+                </span>
+
+                <h1>
+                    Find Exactly What You Need
+                </h1>
+
+                <p>
+                    Use filters to find products near you at the right price.
+                </p>
+
+            </div>
+
+            <button id="clearAllBtn" class="clear-all-btn">
+                Clear All
+            </button>
+
+        </div>
+
+
+        <div class="filter-layout">
+
+
+            <!-- ================= FILTER SIDEBAR ================= -->
+
+            <aside class="filter-sidebar">
+
+                <div class="filter-heading">
+
+                    <h2>
+                        Filters
+                    </h2>
+
+                    <span id="activeFilterCount">
+                        0 filters
+                    </span>
+
+                </div>
+
+
+                <!-- LOCATION -->
+
+                <section class="filter-section">
+
+                    <h3>
+                        📍 Location
+                    </h3>
+
+                    <button
+                        type="button"
+                        id="useLocationBtn"
+                        class="location-detect-btn"
+                    >
+                        📍 Use My Current Location
+                    </button>
+
+                    <input
+                        type="text"
+                        id="locationInput"
+                        class="filter-input"
+                        placeholder="Enter city or area"
+                    >
+
+                </section>
+
+
+                <!-- DISTANCE -->
+
+                <section class="filter-section">
+
+                    <h3>
+                        Distance
+                    </h3>
+
+                    <select id="distanceFilter" class="filter-select">
+
+                        <option value="all">
+                            Any Distance
+                        </option>
+
+                        <option value="5">
+                            Within 5 km
+                        </option>
+
+                        <option value="10">
+                            Within 10 km
+                        </option>
+
+                        <option value="25">
+                            Within 25 km
+                        </option>
+
+                        <option value="50">
+                            Within 50 km
+                        </option>
+
+                        <option value="100">
+                            Within 100 km
+                        </option>
+
+                    </select>
+
+                </section>
+
+
+                <!-- CATEGORY -->
+
+                <section class="filter-section">
+
+                    <h3>
+                        Category
+                    </h3>
+
+                    <select id="categoryFilter" class="filter-select">
+
+                        <option value="all">
+                            All Categories
+                        </option>
+
+                        <option value="Mobiles">
+                            Mobiles
+                        </option>
+
+                        <option value="Electronics">
+                            Electronics
+                        </option>
+
+                        <option value="Vehicles">
+                            Vehicles
+                        </option>
+
+                        <option value="Property">
+                            Property
+                        </option>
+
+                        <option value="Furniture">
+                            Furniture
+                        </option>
+
+                        <option value="Fashion">
+                            Fashion
+                        </option>
+
+                        <option value="Jobs">
+                            Jobs
+                        </option>
+
+                        <option value="Services">
+                            Services
+                        </option>
+
+                    </select>
+
+                </section>
+
+
+                <!-- PRICE -->
+
+                <section class="filter-section">
+
+                    <h3>
+                        Price Range
+                    </h3>
+
+                    <div class="price-inputs">
+
+                        <input
+                            type="number"
+                            id="minPrice"
+                            placeholder="Min ₹"
+                            min="0"
+                        >
+
+                        <span>—</span>
+
+                        <input
+                            type="number"
+                            id="maxPrice"
+                            placeholder="Max ₹"
+                            min="0"
+                        >
+
+                    </div>
+
+                </section>
+
+
+                <!-- CONDITION -->
+
+                <section class="filter-section">
+
+                    <h3>
+                        Condition
+                    </h3>
+
+                    <label class="check-option">
+
+                        <input
+                            type="checkbox"
+                            name="condition"
+                            value="New"
+                        >
+
+                        <span>
+                            New
+                        </span>
+
+                    </label>
+
+
+                    <label class="check-option">
+
+                        <input
+                            type="checkbox"
+                            name="condition"
+                            value="Like New"
+                        >
+
+                        <span>
+                            Like New
+                        </span>
+
+                    </label>
+
+
+                    <label class="check-option">
+
+                        <input
+                            type="checkbox"
+                            name="condition"
+                            value="Good"
+                        >
+
+                        <span>
+                            Good
+                        </span>
+
+                    </label>
+
+
+                    <label class="check-option">
+
+                        <input
+                            type="checkbox"
+                            name="condition"
+                            value="Fair"
+                        >
+
+                        <span>
+                            Fair
+                        </span>
+
+                    </label>
+
+                </section>
+
+
+                <!-- APPLY BUTTON -->
+
+                <button
+                    type="button"
+                    id="applyFilterBtn"
+                    class="apply-filter-btn"
+                >
+                    Apply Filters
+                </button>
+
+            </aside>
+
+
+            <!-- ================= PRODUCTS ================= -->
+
+            <section class="filter-results">
+
+                <div class="results-topbar">
+
+                    <div>
+
+                        <h2>
+                            Products
+                        </h2>
+
+                        <p id="resultInfo">
+                            Showing products near you
+                        </p>
+
+                    </div>
+
+
+                    <div class="sort-area">
+
+                        <label for="sortFilter">
+                            Sort:
+                        </label>
+
+                        <select id="sortFilter">
+
+                            <option value="relevance">
+                                Relevance
+                            </option>
+
+                            <option value="nearest">
+                                Nearest First
+                            </option>
+
+                            <option value="price-low">
+                                Price: Low to High
+                            </option>
+
+                            <option value="price-high">
+                                Price: High to Low
+                            </option>
+
+                            <option value="newest">
+                                Newest First
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACTIVE FILTERS -->
+
+                <div
+                    id="activeFilters"
+                    class="active-filters"
+                ></div>
+
+
+                <!-- PRODUCT GRID -->
+
+                <div
+                    id="productGrid"
+                    class="product-grid"
+                ></div>
+
+
+                <!-- NO RESULTS -->
+
+                <div
+                    id="noResults"
+                    class="no-results hidden"
+                >
+
+                    <div class="no-results-icon">
+                        🔍
+                    </div>
+
+                    <h2>
+                        No Products Found
+                    </h2>
+
+                    <p>
+                        Try changing your filters or increasing the distance.
+                    </p>
+
+                    <button id="resetResultsBtn">
+                        Reset Filters
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="ahd-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <h2>
+                    AHD
+                </h2>
+
+                <p>
+                    Buy anything. Sell anything.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="home.html">
+                    Home
+                </a>
+
+                <a href="sell.html">
+                    Sell
+                </a>
+
+                <a href="account.html">
+                    Account
+                </a>
+
+                <a href="settings.html">
+                    Settings
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © 2026 AHD Marketplace. All rights reserved.
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JS ================= -->
+
+    <script src="js/script.js"></script>
+    <script src="js/location.js"></script>
+    <script src="js/filter.js"></script>
+
+</body>
+</html>

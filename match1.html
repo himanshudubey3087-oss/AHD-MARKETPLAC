@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AHD - Worker Matches</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/match1.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="match1-header">
+
+    <div class="match1-header-left">
+
+        <a href="home.html" class="match1-logo">
+            AHD
+        </a>
+
+        <a href="home.html" class="match1-location">
+            📍 Agra
+        </a>
+
+    </div>
+
+
+    <nav class="match1-nav">
+
+        <a href="home.html">Home</a>
+
+        <a href="category.html">Categories</a>
+
+        <a href="search.html">Search</a>
+
+        <a href="request.html">Request</a>
+
+        <a href="matches.html">Product Matches</a>
+
+        <a href="match1.html" class="active">
+            Worker Matches
+        </a>
+
+        <a href="services.html">Services</a>
+
+        <a href="jobs.html">Jobs</a>
+
+        <a href="messages.html">Messages</a>
+
+        <a href="notifications.html">🔔</a>
+
+        <a href="account.html" class="account-button">
+            👤 Account
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="match1-container">
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="match1-page-header">
+
+        <div>
+
+            <span class="match1-label">
+                AHD SMART MATCH
+            </span>
+
+            <h1>
+                Find the Right Worker
+            </h1>
+
+            <p>
+                Tell us what work you need and AHD will find
+                suitable workers around you.
+            </p>
+
+        </div>
+
+
+        <a href="jobs.html" class="post-work-button">
+            + Post Work
+        </a>
+
+    </section>
+
+
+
+    <!-- ================= REQUIREMENT CARD ================= -->
+
+    <section class="requirement-card">
+
+        <div class="requirement-heading">
+
+            <div>
+
+                <span>
+                    YOUR WORK REQUIREMENT
+                </span>
+
+                <h2 id="requirementTitle">
+                    Electrician Required
+                </h2>
+
+            </div>
+
+            <span class="status-badge" id="requirementStatus">
+                Pending
+            </span>
+
+        </div>
+
+
+        <div class="requirement-grid">
+
+            <div class="requirement-item">
+
+                <span>Work Required</span>
+
+                <strong id="workRequired">
+                    Electrician
+                </strong>
+
+            </div>
+
+
+            <div class="requirement-item">
+
+                <span>Location</span>
+
+                <strong id="workLocation">
+                    Agra
+                </strong>
+
+            </div>
+
+
+            <div class="requirement-item">
+
+                <span>Budget</span>
+
+                <strong id="workBudget">
+                    ₹1,000
+                </strong>
+
+            </div>
+
+
+            <div class="requirement-item">
+
+                <span>Work Type</span>
+
+                <strong id="workType">
+                    Part Time
+                </strong>
+
+            </div>
+
+
+            <div class="requirement-item">
+
+                <span>Required Date</span>
+
+                <strong id="workDate">
+                    Flexible
+                </strong>
+
+            </div>
+
+
+            <div class="requirement-item">
+
+                <span>Duration</span>
+
+                <strong id="workDuration">
+                    Flexible
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="requirement-message">
+
+            <span>
+                Additional Requirement
+            </span>
+
+            <p id="workMessage">
+                Need an experienced electrician for electrical
+                repair work.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= MATCH CONTROL ================= -->
+
+    <section class="match1-controls">
+
+        <div>
+
+            <h2>
+                Recommended Workers
+            </h2>
+
+            <p id="workerCount">
+                Finding suitable workers...
+            </p>
+
+        </div>
+
+
+        <div class="match-sort">
+
+            <label for="workerSort">
+                Sort:
+            </label>
+
+            <select id="workerSort">
+
+                <option value="match">
+                    Best Match
+                </option>
+
+                <option value="rating">
+                    Highest Rated
+                </option>
+
+                <option value="price-low">
+                    Charge: Low to High
+                </option>
+
+                <option value="price-high">
+                    Charge: High to Low
+                </option>
+
+                <option value="distance">
+                    Nearest First
+                </option>
+
+                <option value="experience">
+                    Most Experienced
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= WORKER GRID ================= -->
+
+    <section>
+
+        <div
+            class="worker-grid"
+            id="workerGrid"
+        >
+
+            <!-- Workers will be loaded by match1.js -->
+
+        </div>
+
+
+        <!-- ================= NO MATCH ================= -->
+
+        <div
+            class="no-worker"
+            id="noWorker"
+            style="display:none;"
+        >
+
+            <div class="no-worker-icon">
+                🔎
+            </div>
+
+            <h2>
+                No Suitable Worker Found
+            </h2>
+
+            <p>
+                We couldn't find a strong worker match
+                for your requirement.
+            </p>
+
+            <div class="no-worker-actions">
+
+                <a href="request.html">
+                    Modify Requirement
+                </a>
+
+                <a href="jobs.html">
+                    Browse Jobs
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="match1-footer">
+
+    <div class="footer-logo">
+        AHD
+    </div>
+
+    <p>
+        Buy anything. Sell anything. Find anything.
+    </p>
+
+    <div class="footer-links">
+
+        <a href="home.html">Home</a>
+
+        <a href="services.html">Services</a>
+
+        <a href="jobs.html">Jobs</a>
+
+        <a href="account.html">Account</a>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 AHD Marketplace
+    </p>
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="js/auth.js"></script>
+<script src="js/match1.js"></script>
+
+</body>
+</html>

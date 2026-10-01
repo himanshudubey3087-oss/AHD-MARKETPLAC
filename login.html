@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | AHD Marketplace</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <main class="auth-page">
+        <section class="auth-card">
+
+            <!-- LOGO & BRAND -->
+            <div class="brand">
+                <a href="home.html" style="text-decoration:none;">
+                    <div class="brand-logo">AHD</div>
+                </a>
+                <h1>Welcome Back</h1>
+                <p>Login to your AHD Marketplace account</p>
+            </div>
+
+            <!-- ROLE SWITCHER TABS -->
+            <div class="role-tabs">
+                <button type="button" class="role-tab active" id="tabCustomerBtn" onclick="switchLoginTab('customer')">
+                    👤 Customer
+                </button>
+                <button type="button" class="role-tab seller-tab" id="tabSellerBtn" onclick="switchLoginTab('seller')">
+                    🏪 Seller
+                </button>
+            </div>
+
+            <!-- LOGIN METHOD SWITCHER (Password vs Mobile OTP) -->
+            <div class="login-method-tabs">
+                <button type="button" class="method-tab active" id="btnMethodPassword" onclick="switchLoginMethod('password')">
+                    🔑 Password Login
+                </button>
+                <button type="button" class="method-tab" id="btnMethodOtp" onclick="switchLoginMethod('otp')">
+                    📲 Mobile OTP Login
+                </button>
+            </div>
+
+            <!-- CUSTOMER PASSWORD LOGIN FORM -->
+            <form id="customerLoginForm" novalidate>
+                <div class="input-group">
+                    <label for="customerEmail">Customer Email or Mobile Number</label>
+                    <input
+                        type="text"
+                        id="customerEmail"
+                        name="identifier"
+                        placeholder="Enter email or 10-digit mobile"
+                        autocomplete="username"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <div class="label-row">
+                        <label for="customerPassword">Password</label>
+                        <a href="forgot-password.html?from=customer" id="customerForgotPassword">Forgot Password?</a>
+                    </div>
+                    <div class="password-box">
+                        <input
+                            type="password"
+                            id="customerPassword"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+                        <button type="button" id="customerPasswordToggle" aria-label="Toggle password">
+                            👁️
+                        </button>
+                    </div>
+                </div>
+
+                <div id="customerLoginMessage" class="message" role="alert"></div>
+
+                <button type="submit" class="primary-btn" id="customerLoginSubmit">
+                    Login as Customer
+                </button>
+            </form>
+
+            <!-- CUSTOMER PHONE OTP LOGIN FORM -->
+            <form id="customerOtpLoginForm" style="display: none;" novalidate>
+                <div class="input-group">
+                    <label for="customerOtpPhone">10-Digit Mobile Number</label>
+                    <div class="input-with-button">
+                        <input
+                            type="tel"
+                            id="customerOtpPhone"
+                            maxlength="10"
+                            placeholder="e.g. 9876543210"
+                            required
+                        >
+                        <button type="button" class="send-otp-btn" id="customerSendOtpBtn" onclick="requestLoginOtp('customer')">
+                            📲 Send OTP
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="customerLoginOtp">Enter 6-Digit OTP</label>
+                    <input
+                        type="text"
+                        id="customerLoginOtp"
+                        class="otp-digit-input"
+                        maxlength="6"
+                        inputmode="numeric"
+                        placeholder="• • • • • •"
+                        required
+                    >
+                </div>
+
+                <div id="customerOtpLoginMessage" class="message" role="alert"></div>
+
+                <button type="submit" class="primary-btn" id="customerOtpLoginSubmit">
+                    Verify OTP & Login
+                </button>
+            </form>
+
+            <!-- SELLER PASSWORD LOGIN FORM (Initially Hidden) -->
+            <form id="sellerLoginForm" style="display: none;" novalidate>
+                <div class="input-group">
+                    <label for="sellerEmail">Seller Email or Mobile Number</label>
+                    <input
+                        type="text"
+                        id="sellerEmail"
+                        name="identifier"
+                        placeholder="Enter seller email or mobile"
+                        autocomplete="username"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <div class="label-row">
+                        <label for="sellerPassword">Password</label>
+                        <a href="forgot-password.html?from=seller" id="sellerForgotPassword">Forgot Password?</a>
+                    </div>
+                    <div class="password-box">
+                        <input
+                            type="password"
+                            id="sellerPassword"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+                        <button type="button" id="sellerPasswordToggle" aria-label="Toggle password">
+                            👁️
+                        </button>
+                    </div>
+                </div>
+
+                <div id="sellerLoginMessage" class="message" role="alert"></div>
+
+                <button type="submit" class="primary-btn seller-btn" id="sellerLoginSubmit">
+                    Login as Seller
+                </button>
+            </form>
+
+            <!-- SELLER PHONE OTP LOGIN FORM (Initially Hidden) -->
+            <form id="sellerOtpLoginForm" style="display: none;" novalidate>
+                <div class="input-group">
+                    <label for="sellerOtpPhone">Seller 10-Digit Mobile Number</label>
+                    <div class="input-with-button">
+                        <input
+                            type="tel"
+                            id="sellerOtpPhone"
+                            maxlength="10"
+                            placeholder="e.g. 9123456789"
+                            required
+                        >
+                        <button type="button" class="send-otp-btn seller-btn-style" id="sellerSendOtpBtn" onclick="requestLoginOtp('seller')">
+                            📲 Send OTP
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="sellerLoginOtp">Enter 6-Digit OTP</label>
+                    <input
+                        type="text"
+                        id="sellerLoginOtp"
+                        class="otp-digit-input"
+                        maxlength="6"
+                        inputmode="numeric"
+                        placeholder="• • • • • •"
+                        required
+                    >
+                </div>
+
+                <div id="sellerOtpLoginMessage" class="message" role="alert"></div>
+
+                <button type="submit" class="primary-btn seller-btn" id="sellerOtpLoginSubmit">
+                    Verify OTP & Login
+                </button>
+            </form>
+
+            <!-- 1-CLICK DEMO LOGIN HELPER -->
+            <div class="demo-box">
+                <div class="demo-box-title">⚡ Quick 1-Click Demo Login</div>
+                <div class="demo-buttons">
+                    <button type="button" class="demo-pill-btn" onclick="quickFillAndLogin('customer')">
+                        👤 Demo Customer
+                    </button>
+                    <button type="button" class="demo-pill-btn" onclick="quickFillAndLogin('seller')">
+                        🏪 Demo Seller
+                    </button>
+                </div>
+            </div>
+
+            <!-- CREATE ACCOUNT SECTION -->
+            <div class="create-section">
+                <p>Don't have an account yet?</p>
+                <button type="button" class="create-account-button" id="createAccountButton">
+                    Create New Account
+                </button>
+            </div>
+
+            <!-- BACK TO HOME -->
+            <button type="button" class="back-button" id="backHomeButton">
+                ← Back to Home
+            </button>
+
+            <!-- Hidden elements for backward compatibility -->
+            <div style="display:none;">
+                <button id="customerLoginButton" type="button"></button>
+                <button id="sellerLoginButton" type="button"></button>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

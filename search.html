@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AHD Marketplace - Search</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/search.css">
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="header-container">
+        <!-- LOGO -->
+        <a href="home.html" class="logo">
+            AHD <span>Marketplace</span>
+        </a>
+
+        <!-- LOCATION -->
+        <div class="location-box" onclick="if(window.AHDLocation) window.AHDLocation.promptChangeLocation()" title="Click to change location">
+            <span class="live-dot"></span>
+            <span>📍</span>
+            <span id="userLocation" data-location>Detecting location...</span>
+        </div>
+
+        <!-- SEARCH -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search products, services, jobs..."
+                onkeydown="searchOnEnter(event)"
+            >
+            <button class="search-btn" onclick="runSearch()">
+                🔍
+            </button>
+        </div>
+
+        <!-- NAVIGATION -->
+        <nav class="main-nav">
+            <a href="home.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="sell.html" class="sell-nav-btn">+ Sell</a>
+            <a href="notifications.html" class="nav-icon-link" title="Notifications">🔔</a>
+            <a href="messages.html">Messages</a>
+            <a href="account.html" class="auth-nav-btn">Account</a>
+        </nav>
+    </div>
+</header>
+
+<nav class="category-subnav">
+    <a href="search.html" class="cat-chip active">All Products</a>
+    <a href="search.html?category=Mobiles" class="cat-chip">📱 Mobiles</a>
+    <a href="search.html?category=Electronics" class="cat-chip">💻 Electronics</a>
+    <a href="search.html?category=Vehicles" class="cat-chip">🚗 Vehicles</a>
+    <a href="search.html?category=Furniture" class="cat-chip">🪑 Furniture</a>
+    <a href="search.html?category=Fashion" class="cat-chip">👕 Fashion</a>
+    <a href="jobs.html" class="cat-chip">💼 Jobs</a>
+    <a href="services.html" class="cat-chip">🛠️ Services</a>
+</nav>
+
+
+<main class="search-page">
+
+    <div class="search-heading">
+
+        <div>
+
+            <div class="breadcrumb">
+                <a href="home.html">Home</a>
+                <span>›</span>
+                <strong>Search</strong>
+            </div>
+
+            <h1>
+                Search AHD Marketplace
+            </h1>
+
+            <p id="searchSummary">
+                Search for products near you.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- SEARCH BAR -->
+
+    <section class="advanced-search">
+
+        <input
+            type="text"
+            id="pageSearchInput"
+            placeholder="What are you looking for?"
+            onkeydown="pageSearchEnter(event)"
+        >
+
+        <button onclick="runPageSearch()">
+            Search
+        </button>
+
+    </section>
+
+
+    <!-- TOOLBAR -->
+
+    <section class="search-toolbar">
+
+        <div>
+            <strong id="resultCount">0</strong>
+            results found
+        </div>
+
+        <div class="search-sort">
+
+            <label for="searchSort">
+                Sort:
+            </label>
+
+            <select
+                id="searchSort"
+                onchange="sortSearchResults()"
+            >
+
+                <option value="relevance">
+                    Relevance
+                </option>
+
+                <option value="latest">
+                    Latest
+                </option>
+
+                <option value="low">
+                    Price: Low to High
+                </option>
+
+                <option value="high">
+                    Price: High to Low
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH CONTENT -->
+
+    <section class="search-content">
+
+
+        <!-- FILTER -->
+
+        <aside class="search-filter">
+
+            <h3>
+                Filter Results
+            </h3>
+
+
+            <div class="filter-section">
+
+                <h4>Category</h4>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        value="Mobiles"
+                        class="category-check"
+                        onchange="applySearchFilters()"
+                    >
+                    Mobiles
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        value="Electronics"
+                        class="category-check"
+                        onchange="applySearchFilters()"
+                    >
+                    Electronics
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        value="Vehicles"
+                        class="category-check"
+                        onchange="applySearchFilters()"
+                    >
+                    Vehicles
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        value="Furniture"
+                        class="category-check"
+                        onchange="applySearchFilters()"
+                    >
+                    Furniture
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        value="Fashion"
+                        class="category-check"
+                        onchange="applySearchFilters()"
+                    >
+                    Fashion
+                </label>
+
+            </div>
+
+
+            <div class="filter-section">
+
+                <h4>Condition</h4>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        value="New"
+                        class="condition-check"
+                        onchange="applySearchFilters()"
+                    >
+                    New
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        value="Like New"
+                        class="condition-check"
+                        onchange="applySearchFilters()"
+                    >
+                    Like New
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        value="Good"
+                        class="condition-check"
+                        onchange="applySearchFilters()"
+                    >
+                    Good
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        value="Used"
+                        class="condition-check"
+                        onchange="applySearchFilters()"
+                    >
+                    Used
+                </label>
+
+            </div>
+
+
+            <div class="filter-section">
+
+                <h4>Price Range</h4>
+
+                <input
+                    type="number"
+                    id="searchMinPrice"
+                    placeholder="Minimum ₹"
+                    onchange="applySearchFilters()"
+                >
+
+                <input
+                    type="number"
+                    id="searchMaxPrice"
+                    placeholder="Maximum ₹"
+                    onchange="applySearchFilters()"
+                >
+
+            </div>
+
+
+            <button
+                class="clear-search-filter"
+                onclick="clearSearchFilters()"
+            >
+                Clear Filters
+            </button>
+
+        </aside>
+
+
+        <!-- RESULTS -->
+
+        <div class="search-results">
+
+            <div
+                class="search-product-grid"
+                id="searchProductGrid"
+            >
+            </div>
+
+
+            <div
+                class="search-empty"
+                id="searchEmpty"
+            >
+
+                <div class="empty-search-icon">
+                    🔎
+                </div>
+
+                <h2>
+                    No products found
+                </h2>
+
+                <p>
+                    Try another keyword or change your filters.
+                </p>
+
+                <button onclick="goHome()">
+                    Browse All Products
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div>
+            <b>AHD Marketplace</b>
+            <p>India's leading hyperlocal marketplace to buy, sell, deal and discover trusted local services.</p>
+        </div>
+        <div>
+            <b>Quick Links</b>
+            <a href="home.html">Marketplace</a>
+            <a href="services.html">Local Services</a>
+            <a href="jobs.html">Local Jobs</a>
+            <a href="sell.html">+ Post Listing</a>
+        </div>
+        <div>
+            <b>Account & Support</b>
+            <a href="account.html">My Account</a>
+            <a href="messages.html">Chat & Deals</a>
+            <a href="notifications.html">Notifications</a>
+            <a href="settings.html">Settings</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 AHD Marketplace. All rights reserved.</span>
+        <span>Hyperlocal Buy • Sell • Deal • Match</span>
+    </div>
+</footer>
+
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/script.js"></script>
+<script src="js/location.js"></script>
+<script src="js/search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Service Details - AHD</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/service-details.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="service-header">
+
+    <div class="header-left">
+
+        <a href="home.html" class="ahd-logo">AHD</a>
+
+        <a href="home.html">Home</a>
+        <a href="category.html">Categories</a>
+        <a href="search.html">Search</a>
+        <a href="request.html">Request</a>
+        <a href="matches.html">Matches</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="messages.html">Messages</a>
+
+    </div>
+
+    <div class="header-right">
+
+        <a href="notifications.html" class="notification-link">
+            🔔
+        </a>
+
+        <a href="account.html" class="account-link">
+            👤 Account
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ================= BREADCRUMB ================= -->
+
+<div class="breadcrumb-container">
+
+    <a href="services.html">Services</a>
+
+    <span>›</span>
+
+    <span id="breadcrumbService">
+        Service Details
+    </span>
+
+</div>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="service-details-container">
+
+    <!-- Loading -->
+    <div id="loadingState" class="loading-state">
+
+        <div class="loader"></div>
+
+        <p>
+            Loading service details...
+        </p>
+
+    </div>
+
+
+    <!-- Service Content -->
+
+    <section id="serviceContent" class="service-content hidden">
+
+        <!-- LEFT SIDE -->
+
+        <div class="service-left">
+
+            <!-- Service Image -->
+
+            <div class="service-image-container">
+
+                <img
+                    id="serviceImage"
+                    src=""
+                    alt="Service Image"
+                >
+
+                <span id="serviceCategoryBadge"
+                      class="category-badge">
+                    Service
+                </span>
+
+            </div>
+
+
+            <!-- About Service -->
+
+            <div class="details-card">
+
+                <h2>
+                    About This Service
+                </h2>
+
+                <p id="serviceDescription">
+                </p>
+
+            </div>
+
+
+            <!-- What's Included -->
+
+            <div class="details-card">
+
+                <h2>
+                    What's Included
+                </h2>
+
+                <ul id="includedList"
+                    class="included-list">
+                </ul>
+
+            </div>
+
+
+            <!-- Service Location -->
+
+            <div class="details-card">
+
+                <h2>
+                    Service Location
+                </h2>
+
+                <div class="location-box">
+
+                    <span class="location-icon">
+                        📍
+                    </span>
+
+                    <div>
+
+                        <strong id="serviceLocation">
+                            Agra
+                        </strong>
+
+                        <p>
+                            Service available at selected location
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+
+        <aside class="service-right">
+
+            <div class="booking-card">
+
+                <!-- Title -->
+
+                <span id="serviceCategory"
+                      class="small-category">
+                    Service
+                </span>
+
+                <h1 id="serviceTitle">
+                    Service Name
+                </h1>
+
+
+                <!-- Rating -->
+
+                <div class="rating-row">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <strong id="serviceRating">
+                        4.8
+                    </strong>
+
+                    <span id="serviceReviews">
+                        (120 reviews)
+                    </span>
+
+                </div>
+
+
+                <!-- Provider -->
+
+                <div class="provider-box">
+
+                    <div class="provider-avatar"
+                         id="providerAvatar">
+                        RK
+                    </div>
+
+                    <div>
+
+                        <p class="provider-label">
+                            Service Provider
+                        </p>
+
+                        <strong id="providerName">
+                            Provider Name
+                        </strong>
+
+                        <span id="providerLocation">
+                            Agra
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Price -->
+
+                <div class="price-section">
+
+                    <span>
+                        Starting from
+                    </span>
+
+                    <strong id="servicePrice">
+                        ₹299
+                    </strong>
+
+                </div>
+
+
+                <!-- Actions -->
+
+                <button
+                    id="bookServiceButton"
+                    class="primary-button">
+                    📅 Book This Service
+                </button>
+
+
+                <button
+                    id="messageProviderButton"
+                    class="secondary-button">
+                    💬 Message Provider
+                </button>
+
+
+                <button
+                    id="viewProviderButton"
+                    class="outline-button">
+                    👤 View Provider Profile
+                </button>
+
+
+                <div class="safe-note">
+
+                    🔒 Your contact details are protected.
+
+                </div>
+
+            </div>
+
+
+            <!-- Quick Info -->
+
+            <div class="quick-info-card">
+
+                <div class="quick-info-item">
+
+                    <span>⏱️</span>
+
+                    <div>
+                        <strong>Response Time</strong>
+                        <p>Usually within 1 hour</p>
+                    </div>
+
+                </div>
+
+
+                <div class="quick-info-item">
+
+                    <span>✓</span>
+
+                    <div>
+                        <strong>Verified Provider</strong>
+                        <p>Identity verified</p>
+                    </div>
+
+                </div>
+
+
+                <div class="quick-info-item">
+
+                    <span>🛡️</span>
+
+                    <div>
+                        <strong>AHD Protection</strong>
+                        <p>Secure service booking</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+
+    <!-- Not Found -->
+
+    <section id="notFoundState"
+             class="not-found hidden">
+
+        <div class="not-found-icon">
+            🔍
+        </div>
+
+        <h2>
+            Service Not Found
+        </h2>
+
+        <p>
+            The service you're looking for doesn't exist
+            or may have been removed.
+        </p>
+
+        <a href="services.html"
+           class="back-services-button">
+
+            ← Back to Services
+
+        </a>
+
+    </section>
+
+</main>
+
+
+<!-- ================= BOOKING MODAL ================= -->
+
+<div id="bookingModal"
+     class="modal hidden">
+
+    <div class="modal-overlay"
+         id="modalOverlay">
+    </div>
+
+    <div class="modal-box">
+
+        <button
+            id="closeBookingModal"
+            class="close-modal">
+            ×
+        </button>
+
+        <h2>
+            Book Service
+        </h2>
+
+        <p class="modal-subtitle">
+            Send your service requirement to the provider.
+        </p>
+
+
+        <form id="bookingForm">
+
+            <div class="form-group">
+
+                <label>
+                    What do you need?
+                </label>
+
+                <textarea
+                    id="bookingRequirement"
+                    placeholder="Explain what service you need..."
+                    required>
+                </textarea>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        Preferred Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="bookingDate"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Preferred Time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="bookingTime"
+                        required>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Your Location
+                </label>
+
+                <input
+                    type="text"
+                    id="bookingLocation"
+                    placeholder="Enter your location"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Contact Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="bookingPhone"
+                    placeholder="Enter contact number"
+                    maxlength="10"
+                    required>
+
+            </div>
+
+
+            <div id="bookingMessage"
+                 class="form-message">
+            </div>
+
+
+            <button
+                type="submit"
+                class="primary-button modal-submit">
+
+                Send Booking Request
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="js/auth.js"></script>
+<script src="js/service-details.js"></script>
+
+</body>
+</html>

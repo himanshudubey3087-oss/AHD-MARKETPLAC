@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Worker Profile | AHD</title>
+
+    <link rel="stylesheet" href="css/worker-profile.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="top-header">
+
+    <div class="brand">
+        <a href="home.html">AHD</a>
+        <span>Marketplace</span>
+    </div>
+
+    <nav class="main-nav">
+        <a href="home.html">Home</a>
+        <a href="category.html">Categories</a>
+        <a href="search.html">Search</a>
+        <a href="request.html">Request</a>
+        <a href="match1.html">Workers</a>
+        <a href="services.html">Services</a>
+        <a href="jobs.html">Jobs</a>
+    </nav>
+
+    <div class="header-actions">
+        <a href="messages.html" class="nav-icon">💬</a>
+        <a href="notifications.html" class="nav-icon">🔔</a>
+        <a href="account.html" class="account-btn">Account</a>
+    </div>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="profile-page">
+
+    <!-- BACK -->
+
+    <div class="back-area">
+        <button onclick="history.back()" class="back-btn">
+            ← Back
+        </button>
+    </div>
+
+    <!-- NOTIFICATION TOAST -->
+    <div id="workerNotificationToast" class="worker-toast" style="display: none;"></div>
+
+
+    <!-- PROFILE HERO -->
+
+    <section class="profile-hero">
+
+        <div class="profile-photo-box">
+
+            <img
+                id="workerAvatar"
+                src="https://i.pravatar.cc/300?img=12"
+                alt="Worker">
+
+            <span id="verifiedBadge" class="verified-badge">
+                ✓ Verified
+            </span>
+
+        </div>
+
+
+        <div class="profile-main-info">
+
+            <div class="name-row">
+
+                <div>
+                    <h1 id="workerName">Worker Name</h1>
+
+                    <p id="workerRole" class="worker-role">
+                        Professional Worker
+                    </p>
+                </div>
+
+                <span id="availabilityBadge" class="available-badge">
+                    Available
+                </span>
+
+            </div>
+
+
+            <div class="quick-info">
+
+                <span>
+                    📍 <b id="workerLocation">Agra</b>
+                </span>
+
+                <span>
+                    ⭐ <b id="workerRating">4.8</b>
+                </span>
+
+                <span>
+                    👥 <b id="reviewCount">120</b> Reviews
+                </span>
+
+                <span>
+                    💼 <b id="workerExperience">7 Years</b>
+                </span>
+
+            </div>
+
+
+            <div class="hero-buttons">
+
+                <button
+                    id="contactWorkerBtn"
+                    class="chat-btn">
+                    💬 Chat with Worker
+                </button>
+
+                <button
+                    type="button"
+                    id="heroConfirmWorkerBtn"
+                    class="confirm-worker-btn"
+                    onclick="openConfirmWorker()"
+                >
+                    ✓ Confirm Worker
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CONTENT GRID ================= -->
+
+    <section class="content-grid">
+
+
+        <!-- LEFT -->
+
+        <div class="left-content">
+
+
+            <!-- ABOUT -->
+
+            <div class="card">
+
+                <div class="card-title">
+                    <h2>About Worker</h2>
+                </div>
+
+                <p id="workerAbout" class="about-text">
+                    Experienced professional worker providing
+                    reliable and quality services.
+                </p>
+
+            </div>
+
+
+            <!-- SKILLS -->
+
+            <div class="card">
+
+                <div class="card-title">
+                    <h2>Skills & Expertise</h2>
+                </div>
+
+                <div id="skillsContainer" class="skills-list"></div>
+
+            </div>
+
+
+            <!-- EXPERIENCE -->
+
+            <div class="card">
+
+                <div class="card-title">
+                    <h2>Experience</h2>
+                </div>
+
+                <div id="experienceContainer"
+                     class="experience-list">
+                </div>
+
+            </div>
+
+
+            <!-- WORK HISTORY -->
+
+            <div class="card">
+
+                <div class="card-title">
+                    <h2>Work History</h2>
+                </div>
+
+                <div id="workHistoryContainer"
+                     class="history-list">
+                </div>
+
+            </div>
+
+
+            <!-- REVIEWS -->
+
+            <div class="card">
+
+                <div class="card-title review-heading">
+
+                    <h2>Customer Reviews</h2>
+
+                    <div class="big-rating">
+
+                        <strong id="bigRating">
+                            4.8
+                        </strong>
+
+                        <span>
+                            ⭐⭐⭐⭐⭐
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div id="reviewsContainer"
+                     class="reviews-list">
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIGHT SIDEBAR -->
+
+        <aside class="right-sidebar">
+
+
+            <!-- CHARGES -->
+
+            <div class="side-card">
+
+                <h3>Service Information</h3>
+
+                <div class="side-row">
+
+                    <span>Starting Charge</span>
+
+                    <strong id="workerCharge">
+                        ₹500
+                    </strong>
+
+                </div>
+
+                <div class="side-row">
+
+                    <span>Experience</span>
+
+                    <strong id="sideExperience">
+                        7 Years
+                    </strong>
+
+                </div>
+
+                <div class="side-row">
+
+                    <span>Location</span>
+
+                    <strong id="sideLocation">
+                        Agra
+                    </strong>
+
+                </div>
+
+                <div class="side-row">
+
+                    <span>Availability</span>
+
+                    <strong id="sideAvailability">
+                        Available
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- WORK PREFERENCES -->
+
+            <div class="side-card">
+
+                <h3>Work Preferences</h3>
+
+                <div class="preference">
+
+                    <span>📍 Preferred Location</span>
+
+                    <strong id="preferredLocation">
+                        Agra
+                    </strong>
+
+                </div>
+
+                <div class="preference">
+
+                    <span>🕐 Working Hours</span>
+
+                    <strong id="workingHours">
+                        9 AM - 7 PM
+                    </strong>
+
+                </div>
+
+                <div class="preference">
+
+                    <span>💼 Job Type</span>
+
+                    <strong id="preferredJobType">
+                        Full Time
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- JOB -->
+
+            <div class="job-card">
+
+                <span class="job-label">
+                    JOB OPPORTUNITY
+                </span>
+
+                <h3 id="jobTitle">
+                    Looking for Electrician
+                </h3>
+
+                <p id="jobType">
+                    Full Time
+                </p>
+
+                <p id="jobSalary">
+                    ₹15,000 - ₹20,000 / Month
+                </p>
+
+                <p id="jobLocation">
+                    📍 Agra
+                </p>
+
+                <button
+                    id="confirmWorkerBtn"
+                    class="job-apply-btn">
+
+                    Confirm This Worker
+
+                </button>
+
+            </div>
+
+
+        </aside>
+
+    </section>
+
+</main>
+
+<!-- ================= CONFIRM WORKER MODAL ================= -->
+
+<div id="confirmModal" class="modal">
+
+    <div class="confirm-box">
+
+        <button
+            id="closeConfirmModal"
+            class="close-modal">
+            ×
+        </button>
+
+        <div class="confirm-icon">
+            ✓
+        </div>
+
+        <h2>Confirm Worker</h2>
+
+        <p>
+            क्या आप इस worker को अपने काम के लिए select करना चाहते हैं?
+        </p>
+
+        <div class="selected-worker">
+
+            <img
+                id="confirmWorkerImage"
+                src=""
+                alt="Worker">
+
+            <div>
+                <strong id="confirmWorkerName">
+                    Worker Name
+                </strong>
+
+                <span id="confirmWorkerRole">
+                    Professional Worker
+                </span>
+            </div>
+
+        </div>
+
+        <div class="confirm-actions">
+
+            <button
+                id="cancelConfirmBtn"
+                class="cancel-btn">
+                Cancel
+            </button>
+
+            <button
+                id="finalConfirmBtn"
+                class="final-confirm-btn">
+                ✓ Confirm Worker
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= SCRIPT ================= -->
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/worker-profile.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AHD - Deal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/deal.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="main-header">
+
+    <div class="logo">
+        <a href="home.html">AHD</a>
+    </div>
+
+    <div class="location">
+        📍 <span id="userLocation">Agra</span>
+    </div>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="globalSearch"
+            placeholder="Search products, services, workers..."
+        >
+        <button onclick="performSearch()">🔍</button>
+    </div>
+
+    <button class="sell-btn" onclick="goToSell()">
+        + Sell
+    </button>
+
+    <div class="account-area">
+        <button onclick="goToAccount()" class="account-btn">
+            👤 Account
+        </button>
+    </div>
+
+</header>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav class="main-nav">
+
+    <a href="home.html">Home</a>
+
+    <a href="category.html">Categories</a>
+
+    <a href="search.html">Search</a>
+
+    <a href="request.html">Request</a>
+
+    <a href="matches.html">Product Matches</a>
+
+    <a href="match1.html">Worker Matches</a>
+
+    <a href="services.html">Services</a>
+
+    <a href="jobs.html">Jobs</a>
+
+    <a href="messages.html">Messages</a>
+
+    <a href="notifications.html">Notifications</a>
+
+    <a href="account.html">Account</a>
+
+</nav>
+
+
+<!-- ================= PAGE ================= -->
+
+<main class="deal-page">
+
+    <!-- Breadcrumb -->
+
+    <div class="breadcrumb">
+
+        <a href="home.html">Home</a>
+
+        <span>›</span>
+
+        <a href="messages.html">Messages</a>
+
+        <span>›</span>
+
+        <strong>Deal</strong>
+
+    </div>
+
+
+    <!-- ================= PAGE TITLE ================= -->
+
+    <section class="deal-heading">
+
+        <div>
+
+            <p class="small-label">
+                AHD DEAL
+            </p>
+
+            <h1 id="dealTitle">
+                Deal Details
+            </h1>
+
+            <p id="dealSubtitle">
+                Manage your deal safely through AHD.
+            </p>
+
+        </div>
+
+
+        <div class="deal-id-box">
+
+            <span>Deal ID</span>
+
+            <strong id="dealId">
+                AHD-DEMO-001
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STATUS ================= -->
+
+    <section class="deal-status-card">
+
+        <div class="status-left">
+
+            <span class="status-icon">
+                🔄
+            </span>
+
+            <div>
+
+                <span class="status-label">
+                    Deal Status
+                </span>
+
+                <h2 id="dealStatus">
+                    Pending
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="status-progress">
+
+            <div class="progress-step active">
+                <span>1</span>
+                <small>Created</small>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+                <span>2</span>
+                <small>Accepted</small>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+                <span>3</span>
+                <small>In Progress</small>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+                <span>4</span>
+                <small>Completed</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MAIN GRID ================= -->
+
+    <div class="deal-grid">
+
+
+        <!-- ================= LEFT ================= -->
+
+        <section class="deal-main">
+
+
+            <!-- PERSON CARD -->
+
+            <div class="deal-card person-card">
+
+                <div class="card-title">
+
+                    <h2 id="personSectionTitle">
+                        👷 Worker Details
+                    </h2>
+
+                </div>
+
+
+                <div class="person-content">
+
+                    <img
+                        id="personImage"
+                        src="https://i.pravatar.cc/150?img=12"
+                        alt="Worker"
+                    >
+
+                    <div class="person-info">
+
+                        <h3 id="personName">
+                            Rajesh Kumar
+                        </h3>
+
+                        <p id="personRole">
+                            Electrician
+                        </p>
+
+                        <p id="personLocation">
+                            📍 Agra, Uttar Pradesh
+                        </p>
+
+                        <div class="person-rating">
+
+                            ⭐ <strong id="personRating">
+                                4.8
+                            </strong>
+
+                            <span>
+                                Rating
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="outline-btn"
+                        onclick="openPersonProfile()"
+                    >
+                        View Profile
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- WORK / PRODUCT DETAILS -->
+
+            <div class="deal-card">
+
+                <div class="card-title">
+
+                    <h2 id="detailsHeading">
+                        📋 Work Details
+                    </h2>
+
+                </div>
+
+
+                <div class="details-list">
+
+                    <div class="detail-row">
+
+                        <span>
+                            Requirement
+                        </span>
+
+                        <strong id="dealRequirement">
+                            Home Electrical Repair
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>
+                            Location
+                        </span>
+
+                        <strong id="dealLocation">
+                            Agra
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>
+                            Work Date
+                        </span>
+
+                        <strong id="dealDate">
+                            25 Aug 2026
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>
+                            Duration
+                        </span>
+
+                        <strong id="dealDuration">
+                            2-3 Hours
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>
+                            Description
+                        </span>
+
+                        <strong id="dealDescription">
+                            Fan wiring aur switch board repair.
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAYMENT -->
+
+            <div class="deal-card">
+
+                <div class="card-title">
+
+                    <h2>
+                        💰 Payment Details
+                    </h2>
+
+                </div>
+
+
+                <div class="payment-box">
+
+                    <div>
+
+                        <span>
+                            Agreed Amount
+                        </span>
+
+                        <strong id="agreedAmount">
+                            ₹1,500
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Payment Status
+                        </span>
+
+                        <strong
+                            id="paymentStatus"
+                            class="payment-pending"
+                        >
+                            Pending
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DEAL ACTIONS -->
+
+            <div class="deal-card action-card">
+
+                <h2>
+                    ⚡ Deal Actions
+                </h2>
+
+                <div class="action-buttons">
+
+                    <button
+                        id="startDealBtn"
+                        class="primary-btn"
+                        onclick="startDeal()"
+                    >
+                        ▶ Start Work
+                    </button>
+
+
+                    <button
+                        id="completeDealBtn"
+                        class="success-btn"
+                        onclick="completeDeal()"
+                        disabled
+                    >
+                        ✓ Mark Completed
+                    </button>
+
+
+                    <button
+                        class="chat-btn"
+                        onclick="openChat()"
+                    >
+                        💬 Open Chat
+                    </button>
+
+
+                    <button
+                        id="cancelDealBtn"
+                        class="danger-btn"
+                        onclick="cancelDeal()"
+                    >
+                        ✕ Cancel Deal
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- REVIEW -->
+
+            <div
+                class="deal-card review-card"
+                id="reviewSection"
+                style="display:none;"
+            >
+
+                <div class="card-title">
+
+                    <h2>
+                        ⭐ Rate Your Experience
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    Work complete hone ke baad worker ko rating aur review dein.
+                </p>
+
+
+                <div class="rating-selector">
+
+                    <button onclick="selectRating(1)">★</button>
+                    <button onclick="selectRating(2)">★</button>
+                    <button onclick="selectRating(3)">★</button>
+                    <button onclick="selectRating(4)">★</button>
+                    <button onclick="selectRating(5)">★</button>
+
+                </div>
+
+
+                <textarea
+                    id="reviewText"
+                    placeholder="Apna experience likhein..."
+                ></textarea>
+
+
+                <button
+                    class="primary-btn"
+                    onclick="submitReview()"
+                >
+                    Submit Review
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RIGHT SIDEBAR ================= -->
+
+        <aside class="deal-sidebar">
+
+
+            <!-- SAFETY -->
+
+            <div class="side-card safety-card">
+
+                <div class="side-icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    AHD Safety
+                </h3>
+
+                <p>
+                    Deal details ko verify karke hi payment karein.
+                </p>
+
+                <ul>
+
+                    <li>
+                        ✓ Worker/Seller profile verify karein
+                    </li>
+
+                    <li>
+                        ✓ Deal amount confirm karein
+                    </li>
+
+                    <li>
+                        ✓ Chat mein details maintain karein
+                    </li>
+
+                    <li>
+                        ✓ Work complete hone par deal close karein
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- QUICK INFO -->
+
+            <div class="side-card">
+
+                <h3>
+                    📌 Quick Information
+                </h3>
+
+
+                <div class="quick-row">
+
+                    <span>
+                        Created
+                    </span>
+
+                    <strong id="createdAt">
+                        Today
+                    </strong>
+
+                </div>
+
+
+                <div class="quick-row">
+
+                    <span>
+                        Deal Type
+                    </span>
+
+                    <strong id="dealType">
+                        Worker Deal
+                    </strong>
+
+                </div>
+
+
+                <div class="quick-row">
+
+                    <span>
+                        Customer
+                    </span>
+
+                    <strong id="customerName">
+                        You
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- HELP -->
+
+            <div class="side-card help-card">
+
+                <h3>
+                    Need Help?
+                </h3>
+
+                <p>
+                    Deal ke regarding koi problem hai?
+                </p>
+
+                <button onclick="contactSupport()">
+                    Contact AHD Support
+                </button>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</main>
+
+
+<!-- ================= MOBILE NAV ================= -->
+
+<nav class="mobile-bottom-nav">
+
+    <a href="home.html">
+        🏠
+        <span>Home</span>
+    </a>
+
+    <a href="search.html">
+        🔍
+        <span>Search</span>
+    </a>
+
+    <a href="sell.html">
+        ➕
+        <span>Sell</span>
+    </a>
+
+    <a href="messages.html">
+        💬
+        <span>Messages</span>
+    </a>
+
+    <a href="account.html">
+        👤
+        <span>Account</span>
+    </a>
+
+</nav>
+
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/deal.js"></script>
+
+</body>
+</html>

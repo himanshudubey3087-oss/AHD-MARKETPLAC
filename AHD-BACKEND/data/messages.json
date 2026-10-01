@@ -1,0 +1,38 @@
+[
+  {
+    "id": "MSG-1790848848732",
+    "dealId": "DEAL-TEST-1790848848707",
+    "sender": "test_customer_848246@ahd.in",
+    "receiver": "test_seller_848246@ahd.in",
+    "message": "Hello, can you deliver this iPhone today in Dayalbagh?",
+    "timestamp": "2026-10-01T10:00:48.732Z",
+    "read": 0
+  },
+  {
+    "id": "MSG-1790848869800",
+    "dealId": "DEAL-TEST-1790848869776",
+    "sender": "test_customer_869312@ahd.in",
+    "receiver": "test_seller_869312@ahd.in",
+    "message": "Hello, can you deliver this iPhone today in Dayalbagh?",
+    "timestamp": "2026-10-01T10:01:09.800Z",
+    "read": 0
+  },
+  {
+    "id": "MSG-1790850829115",
+    "dealId": "DEAL-TEST-1790850829094",
+    "sender": "test_customer_828647@ahd.in",
+    "receiver": "test_seller_828647@ahd.in",
+    "message": "Hello, can you deliver this iPhone today in Dayalbagh?",
+    "timestamp": "2026-10-01T10:33:49.115Z",
+    "read": 0
+  },
+  {
+    "id": "MSG-1790852113368",
+    "dealId": "DEAL-TEST-1790852113343",
+    "sender": "test_customer_112851@ahd.in",
+    "receiver": "test_seller_112851@ahd.in",
+    "message": "Hello, can you deliver this iPhone today in Dayalbagh?",
+    "timestamp": "2026-10-01T10:55:13.368Z",
+    "read": 0
+  }
+]

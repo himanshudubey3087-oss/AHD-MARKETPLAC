@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jobs & Work - AHD</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jobs.css">
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="header-container">
+        <!-- LOGO -->
+        <a href="home.html" class="logo">
+            AHD <span>Marketplace</span>
+        </a>
+
+        <!-- LOCATION -->
+        <div class="location-box" onclick="if(window.AHDLocation) window.AHDLocation.promptChangeLocation()" title="Click to change location">
+            <span class="live-dot"></span>
+            <span>📍</span>
+            <span id="userLocation" data-location>Detecting location...</span>
+        </div>
+
+        <!-- SEARCH -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="jobsSearchInput"
+                placeholder="Search jobs, skills, vacancies..."
+                onkeydown="if(event.key==='Enter') window.location.href='search.html?q='+encodeURIComponent(this.value)"
+            >
+            <button class="search-btn" onclick="const q=document.getElementById('jobsSearchInput').value; window.location.href='search.html?q='+encodeURIComponent(q)">
+                🔍
+            </button>
+        </div>
+
+        <!-- NAVIGATION -->
+        <nav class="main-nav">
+            <a href="home.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="jobs.html" class="active">Jobs</a>
+            <a href="sell.html" class="sell-nav-btn">+ Sell</a>
+            <a href="notifications.html" class="nav-icon-link" title="Notifications">🔔</a>
+            <a href="messages.html">Messages</a>
+            <a href="account.html" class="auth-nav-btn">Account</a>
+        </nav>
+    </div>
+</header>
+
+
+<main class="jobs-container">
+
+    <!-- HERO -->
+
+    <section class="jobs-hero">
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+                AHD WORK & JOBS
+            </span>
+
+            <h1>
+                Find Work. Hire People.
+                <br>
+                Build Opportunities.
+            </h1>
+
+            <p>
+                Find jobs near you or connect with skilled
+                workers for your work requirements.
+            </p>
+
+            <div class="hero-actions">
+
+                <button id="findJobsButton">
+                    🔎 Find Jobs
+                </button>
+
+                <button id="postJobButton">
+                    + Post a Job
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH -->
+
+    <section class="job-search-section">
+
+        <div class="search-box">
+
+            <span>🔎</span>
+
+            <input
+                type="text"
+                id="jobSearch"
+                placeholder="Search jobs, skills or work..."
+            >
+
+        </div>
+
+        <select id="locationFilter">
+
+            <option value="all">
+                All Locations
+            </option>
+
+            <option value="Agra">
+                Agra
+            </option>
+
+            <option value="Mathura">
+                Mathura
+            </option>
+
+            <option value="Firozabad">
+                Firozabad
+            </option>
+
+            <option value="Delhi">
+                Delhi
+            </option>
+
+        </select>
+
+        <select id="jobTypeFilter">
+
+            <option value="all">
+                All Job Types
+            </option>
+
+            <option value="Full Time">
+                Full Time
+            </option>
+
+            <option value="Part Time">
+                Part Time
+            </option>
+
+            <option value="Contract">
+                Contract
+            </option>
+
+            <option value="Daily Work">
+                Daily Work
+            </option>
+
+        </select>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <section class="job-categories">
+
+        <h2>
+            Browse by Category
+        </h2>
+
+        <div class="category-list">
+
+            <button data-category="all">
+                🧰 All Jobs
+            </button>
+
+            <button data-category="Delivery">
+                🛵 Delivery
+            </button>
+
+            <button data-category="Driver">
+                🚗 Driver
+            </button>
+
+            <button data-category="Sales">
+                💼 Sales
+            </button>
+
+            <button data-category="Computer">
+                💻 Computer
+            </button>
+
+            <button data-category="Teaching">
+                📚 Teaching
+            </button>
+
+            <button data-category="Construction">
+                🏗️ Construction
+            </button>
+
+            <button data-category="Office">
+                🏢 Office
+            </button>
+             <button data-category="Office">
+                🏢 Majdur
+            </button
+
+        </div>
+
+    </section>
+
+
+    <!-- TOOLBAR -->
+
+    <section class="jobs-toolbar">
+
+        <div>
+
+            <h2>
+                Available Jobs
+            </h2>
+
+            <p id="jobCount">
+                0 jobs available
+            </p>
+
+        </div>
+
+        <select id="sortJobs">
+
+            <option value="recommended">
+                Recommended
+            </option>
+
+            <option value="salaryHigh">
+                Salary: High to Low
+            </option>
+
+            <option value="salaryLow">
+                Salary: Low to High
+            </option>
+
+            <option value="newest">
+                Newest
+            </option>
+
+        </select>
+
+    </section>
+
+
+    <!-- JOB GRID -->
+
+    <section id="jobsGrid" class="jobs-grid">
+    </section>
+
+
+    <!-- EMPTY -->
+
+    <section id="emptyState"
+             class="empty-state hidden">
+
+        <div>
+            🔍
+        </div>
+
+        <h2>
+            No Jobs Found
+        </h2>
+
+        <p>
+            Try changing your search or filters.
+        </p>
+
+        <button id="clearFilters">
+            Clear Filters
+        </button>
+
+    </section>
+
+</main>
+
+
+<!-- ================= POST JOB MODAL ================= -->
+
+<div id="postJobModal" class="modal hidden">
+
+    <div id="modalOverlay" class="modal-overlay"></div>
+
+    <div class="modal-box">
+
+        <button id="closeModal"
+                class="close-modal">
+            ×
+        </button>
+
+        <h2>
+            Post a Job
+        </h2>
+
+        <p class="modal-subtitle">
+            Tell people what kind of worker you need.
+        </p>
+
+
+        <form id="jobForm">
+
+            <div class="form-group">
+
+                <label>
+                    Job Title *
+                </label>
+
+                <input
+                    type="text"
+                    id="jobTitle"
+                    placeholder="e.g. Delivery Boy"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        Category *
+                    </label>
+
+                    <select id="jobCategory" required>
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <option value="Delivery">
+                            Delivery
+                        </option>
+
+                        <option value="Driver">
+                            Driver
+                        </option>
+
+                        <option value="Sales">
+                            Sales
+                        </option>
+
+                        <option value="Computer">
+                            Computer
+                        </option>
+
+                        <option value="Teaching">
+                            Teaching
+                        </option>
+
+                        <option value="Construction">
+                            Construction
+                        </option>
+
+                        <option value="Office">
+                            Office
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Job Type *
+                    </label>
+
+                    <select id="newJobType" required>
+
+                        <option value="">
+                            Select Type
+                        </option>
+
+                        <option value="Full Time">
+                            Full Time
+                        </option>
+
+                        <option value="Part Time">
+                            Part Time
+                        </option>
+
+                        <option value="Contract">
+                            Contract
+                        </option>
+
+                        <option value="Daily Work">
+                            Daily Work
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        Salary / Payment *
+                    </label>
+
+                    <input
+                        type="number"
+                        id="jobSalary"
+                        placeholder="₹ Amount"
+                        min="1"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Location *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="jobLocation"
+                        placeholder="e.g. Agra"
+                        value="Agra"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Required Skills *
+                </label>
+
+                <input
+                    type="text"
+                    id="jobSkills"
+                    placeholder="e.g. Driving, Computer, Excel"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Job Description *
+                </label>
+
+                <textarea
+                    id="jobDescription"
+                    placeholder="Explain the work and requirements..."
+                    required>
+                </textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Contact Number *
+                </label>
+
+                <input
+                    type="tel"
+                    id="jobPhone"
+                    maxlength="10"
+                    placeholder="10 digit mobile number"
+                    required
+                >
+
+            </div>
+
+
+            <div id="jobFormMessage"
+                 class="form-message">
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-job-button">
+
+                Post Job
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/location.js"></script>
+<script src="js/jobs.js"></script>
+
+</body>
+</html>
