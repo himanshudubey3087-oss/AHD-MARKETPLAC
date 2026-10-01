@@ -40,9 +40,24 @@ app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
 // Serve frontend static files
 const frontendPath = path.join(__dirname, "..");
-if (!process.env.VERCEL) {
-    app.use(express.static(frontendPath));
-}
+app.use(express.static(frontendPath));
+
+// Route root to index.html
+app.get("/", (req, res) => {
+    res.sendFile(path.join(frontendPath, "index.html"));
+});
+
+// Route clean page names like /home -> home.html, /login -> login.html
+app.get("/:page", (req, res, next) => {
+    if (req.params.page === "api" || req.params.page.startsWith("api")) return next();
+    const page = req.params.page;
+    const htmlFile = page.endsWith(".html") ? page : `${page}.html`;
+    const filePath = path.join(frontendPath, htmlFile);
+    if (fs.existsSync(filePath)) {
+        return res.sendFile(filePath);
+    }
+    next();
+});
 
 /* =========================================================
    HEALTH CHECK
@@ -595,15 +610,15 @@ app.get(["/setting.js", "/settings.js", "/js/setting.js", "/js/settings.js"], (r
    FALLBACK ROUTE & ERROR HANDLING
 ========================================================= */
 app.use((req, res) => {
-    if (process.env.VERCEL) {
+    if (req.path.startsWith("/api/")) {
         return res.status(404).json({ error: "API endpoint not found", path: req.originalUrl });
     }
     const indexPath = path.join(frontendPath, "index.html");
-    res.sendFile(indexPath, (err) => {
-        if (err && !res.headersSent) {
-            res.status(404).send("Page not found");
-        }
-    });
+    if (fs.existsSync(indexPath)) {
+        res.sendFile(indexPath);
+    } else {
+        res.status(404).send("Page not found");
+    }
 });
 
 app.use((err, req, res, next) => {
